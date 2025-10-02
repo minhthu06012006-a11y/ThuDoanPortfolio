@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thu Doan - UX/UI Designer Portfolio</title>
+  <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
+  <style>
+    /* Reset */
+    body {
+      font-family: 'Helvetica Neue', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #fff;
+      color: #222;
+      line-height: 1.6;
+      overflow-x: hidden; /* Prevent horizontal overflow globally */
+    }
+
+    .section-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 20px 60px; 
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    .content-container {
+      width: 100%;
+      max-width: 100vw; /* Full viewport width without cap */
+      margin: 0 auto;
+    }
+
+    .artworks-layout {
+      display: flex;
+      gap: 28px;
+    }
+
+    .left-column {
+      width: 22%;
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .left-column h1 {
+      font-family: 'Poppins', sans-serif;
+      font-size: 48px;
+      font-weight: 400;
+      line-height: 1.5;
+    }
+
+    .body-text{
+      margin-top: -50px;
+    }
+
+    .title-section {
+      font-size: 14px;
+      font-weight: bold;
+      margin-bottom: 6px;
+      text-transform: uppercase;
+    }
+
+    .social-title { margin-top: 24px; }
+
+
+
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border: 1.5px solid #000;
+      border-radius: 30px;
+      font-size: 15px;
+      font-weight: 500;
+      background: #fff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cta-button:hover {
+      background: #f5f5f5;
+    }
+
+    .cta-icon {
+      width: 18px;
+      height: 18px;
+    }
+
+    .divider {
+      width: 1px;
+      height: 700px;
+      background-color: #1e1e1e;
+      align-self: stretch;
+    }
+
+    /* ARTWORKS */
+    .artworks-grid {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .artworks-row {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap; /* Allow wrapping on very small screens to prevent overflow */
+    }
+
+    .artworks-row img {
+      object-fit: cover;
+      max-width: 100%; /* Scale images to fit */
+      height: auto; /* Maintain aspect ratio */
+      min-width: 0; /* Allow shrinking */
+      flex: 0 1 auto; /* Shrink if needed without growing */
+    }
+
+    .twosmall {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    /* Fixed sizes on larger screens to keep original arrangement */
+    @media screen and (min-width: 1025px) {
+      .tall-img   { width: 286px; height: 500px; }
+      .small-vert { width: 202px; height: 298px; }
+      .small-horiz{ width: 202px; height: 160px; }
+      .wide       { width: 474px; height: 390px; }
+      .medium     { width: 342px; height: 532px; }
+      .large      { width: 492px; height: 362px; }
+      
+      /* Ensuring bottom-img keeps its original size */
+      .bottom-img { 
+        width: auto !important; 
+        height: auto !important; 
+        max-width: none !important; 
+        max-height: none !important;
+        object-fit: contain !important; /* Keeps aspect ratio */
+        margin-top: -80px;
+      }
+    }
+
+    /* Media queries for responsiveness on smaller devices */
+    @media screen and (max-width: 1024px) {
+      .artworks-layout {
+        flex-direction: column; /* Stack left column above grid */
+      }
+      .left-column {
+        width: 100%;
+      }
+      .divider {
+        display: none;
+      }
+      .section-wrapper {
+        padding: 20px 30px; /* Reduce padding */
+      }
+    }
+
+    @media screen and (max-width: 600px) {
+      .section-wrapper {
+        padding: 10px 15px;
+      }
+      .artworks-row {
+        justify-content: center;
+      }
+      .left-column h1 {
+        font-size: 36px; /* Scale down text */
+      }
+    }
+
+    /* Back Button Styles */
+    .back-button {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      height: 50px;
+      background: transparent; /* Nền trong suốt */
+      border: 2px solid #000; /* Viền đen */
+      color: #000; /* Màu chữ đen */
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 50%;
+      box-shadow: 0 0 10px #000; /* Thêm hiệu ứng đổ bóng nhẹ */
+      transition: transform 0.3s, box-shadow 0.3s;
+      z-index: 1000;
+    }
+
+    .back-button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px #000; /* Hiệu ứng đổ bóng khi hover */
+    }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+  <button class="back-button" onclick="history.back()">&lt;</button>
+
+  <section class="section-wrapper">
+    <div class="content-container">
+      <div class="artworks-section">
+        <div class="artworks-layout">
+
+          <!-- Left Column -->
+          <div class="left-column">
+            <h1>ARTWORKS</h1>
+            <p class="body-text">
+              Just a place to enjoy my love for Art
+            </p>
+            <button class="cta-button"
+                    onclick="window.location.href='https://drive.google.com/drive/folders/1rny_qiwWULHWx616uR6V_y1R6VkHsacx';">
+              For More Details
+              <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+              </svg>
+            </button>
+            
+          </div>
+
+          <!-- Divider -->
+          <div class="divider"></div>
+
+          <!-- Right Column (Artworks Grid) -->
+          <div class="artworks-grid">
+
+            <!-- HÀNG TRÊN -->
+            <div class="artworks-row">
+              <img src="assets/images/img_frame_39963.png" alt="Artwork" class="tall-img" />
+              <div class="twosmall">
+                <img src="assets/images/img_nh_9.png" alt="Artwork" class="small-vert" />
+                <img src="assets/images/img_frame_39964.png" alt="Artwork" class="small-horiz" />
+              </div>
+              <img src="assets/images/img_nh_10.png" alt="Artwork" class="wide" />
+            </div>
+
+            <!-- HÀNG DƯỚI -->
+            <div class="artworks-row">
+              <img src="assets/images/img_nh_1.png" alt="Artwork" class="bottom-img" />
+              <img src="assets/images/img_nh_2.png" alt="Artwork" class="medium" />
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
