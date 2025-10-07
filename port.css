@@ -983,10 +983,13 @@ button,
     display: block;
     position: absolute;
     bottom: 0;
-    right: 0;
-    width: 300px;
+    left: 50%;  /* Đặt vị trí bắt đầu từ giữa màn hình */
+    transform: translateX(-50%);  /* Dịch chuyển phần tử về phía trái một nửa chiều rộng của nó */
+    top: 20px
+    width: 800px;
     height: auto;
     opacity: 0.5;
+
   }
 }
 
