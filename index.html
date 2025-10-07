@@ -9,6 +9,11 @@
     <script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fthsappli1462back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
 </head>
 <body>
+    <!-- Added audio element for background music -->
+    <audio id="bgMusic" loop>
+        <source src="assets/audio/background-music.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- Hero Section -->
     <section id="home" class="hero-section">
         <div class="content-container">
@@ -22,8 +27,26 @@
                     <a href="#projects" class="nav-item">Projects</a>
                     <a href="#certificates" class="nav-item">Certificates</a>
                     <a href="#contact" class="nav-item">Contact</a>
-                    
                 </nav>
+                <!-- Added music controls in top right corner -->
+                <div class="music-controls">
+                    <button id="playPauseBtn" class="music-btn" aria-label="Play/Pause Music">
+                        <svg class="play-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M8 5v14l11-7z" fill="currentColor"/>
+                        </svg>
+                        <svg class="pause-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" style="display: none;">
+                            <path d="M6 4h4v16H6V4zm8 0h4v16h-4V4z" fill="currentColor"/>
+                        </svg>
+                    </button>
+                    <div class="volume-control">
+                        <button id="volumeBtn" class="music-btn" aria-label="Volume Control">
+                            <svg class="volume-icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z" fill="currentColor"/>
+                            </svg>
+                        </button>
+                        <input type="range" id="volumeSlider" class="volume-slider" min="0" max="100" value="50" aria-label="Volume Slider">
+                    </div>
+                </div>
             </header>
             
             <!-- Hero Content -->
@@ -41,7 +64,6 @@
                         <button class="btn-secondary" onclick="document.getElementById('contact').scrollIntoView({ behavior: 'smooth' });">
                             Contact Me
                         </button>
-                          
                     </div>
                 </div>
                 <img src="assets/images/universeelement-Photoroom.png" alt="3D Design Elements" class="hero-image" />
@@ -112,7 +134,6 @@
                             <button class="btn-project btn-project-secondary" onclick="window.location.href='https://www.figma.com/design/X3Te8RePqi8xFO7NOMlj3l/Find-your-Passion---Esport-Website?node-id=1-2';">
                                 Short cut >=
                             </button>
-                    
                         </div>
                     </div>
                 </div>
@@ -129,7 +150,6 @@
                             <button class="btn-project btn-project-secondary" onclick="window.location.href='https://timetogotobed.wuaze.com/?i=2';">
                                 Short cut >=
                             </button>
-                    
                         </div>
                     </div>
                 </div>
@@ -146,7 +166,6 @@
                             <button class="btn-project btn-project-secondary" onclick="window.location.href='https://www.figma.com/design/XpG29Qk2bjWnKQF9PQqoTT/D%E1%BB%B1-%C3%A1n-%22Ng%C3%A0y-Gi%E1%BB%97-T%E1%BB%95%22?node-id=85-771&p=f&t=Sg0qgs8AakP3OyTo-0';">
                                 Short cut >=
                             </button>
-                    
                         </div>
                     </div>
                 </div>
@@ -179,7 +198,6 @@
                             <button class="btn-project btn-project-secondary" onclick="window.location.href='https://drive.google.com/drive/folders/1rny_qiwWULHWx616uR6V_y1R6VkHsacx';">
                                 Short cut >=
                             </button>
-
                         </div>
                     </div>
                 </div>
@@ -327,23 +345,16 @@
     </section>
   
       
-      
     <!-- Footer -->
     <footer class="footer">
         <div class="content-wrapper">
             <nav class="footer-nav">
-
-                    <img src="assets/images/img_home.svg" alt="Home" class="nav-icons" />
-                    Home
-
-
-                    <img src="assets/images/img_user.svg" alt="About" class="nav-icons" />
-                    About me
-
-
-                    <img src="assets/images/img_phone.svg" alt="Contact" class="nav-icons" />
-                    Contact
-
+                <img src="assets/images/img_home.svg" alt="Home" class="nav-icons" />
+                Home
+                <img src="assets/images/img_user.svg" alt="About" class="nav-icons" />
+                About me
+                <img src="assets/images/img_phone.svg" alt="Contact" class="nav-icons" />
+                Contact
             </nav>
             <div class="social-links">
                 <a href="https://www.facebook.com/minhthu.doannguye" target="_blank" class="social-link">
@@ -363,6 +374,9 @@
         </div>
     </footer>
 
+    <!-- Custom cursor elements for glow effect -->
+    <div class="cursor-glow"></div>
+    <div class="cursor-glow-outer"></div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -419,10 +433,106 @@
           };
       
           window.addEventListener('scroll', onScroll, { passive: true });
-          onScroll(); // cập nhật ngay khi load
+          onScroll();
+
+          const bgMusic = document.getElementById('bgMusic');
+          const playPauseBtn = document.getElementById('playPauseBtn');
+          const playIcon = playPauseBtn.querySelector('.play-icon');
+          const pauseIcon = playPauseBtn.querySelector('.pause-icon');
+          const volumeBtn = document.getElementById('volumeBtn');
+          const volumeSlider = document.getElementById('volumeSlider');
+          const volumeControl = document.querySelector('.volume-control');
+
+          // Set initial volume
+          bgMusic.volume = 0.5;
+
+          // Play/Pause functionality
+          playPauseBtn.addEventListener('click', () => {
+            if (bgMusic.paused) {
+              bgMusic.play();
+              playIcon.style.display = 'none';
+              pauseIcon.style.display = 'block';
+            } else {
+              bgMusic.pause();
+              playIcon.style.display = 'block';
+              pauseIcon.style.display = 'none';
+            }
+          });
+
+          // Volume control toggle
+          volumeBtn.addEventListener('click', () => {
+            volumeControl.classList.toggle('show');
+          });
+
+          // Volume slider
+          volumeSlider.addEventListener('input', (e) => {
+            bgMusic.volume = e.target.value / 100;
+          });
+
+          // Close volume slider when clicking outside
+          document.addEventListener('click', (e) => {
+            if (!volumeControl.contains(e.target) && !volumeBtn.contains(e.target)) {
+              volumeControl.classList.remove('show');
+            }
+          });
+        });
+
+        // Cursor glow effect script
+        const cursorGlow = document.querySelector('.cursor-glow');
+        const cursorGlowOuter = document.querySelector('.cursor-glow-outer');
+        
+        let mouseX = 0;
+        let mouseY = 0;
+        let cursorX = 0;
+        let cursorY = 0;
+        let outerX = 0;
+        let outerY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+          mouseX = e.clientX;
+          mouseY = e.clientY;
+        });
+
+        function animate() {
+          cursorX += (mouseX - cursorX) * 0.2;
+          cursorY += (mouseY - cursorY) * 0.2;
+          outerX += (mouseX - outerX) * 0.1;
+          outerY += (mouseY - outerY) * 0.1;
+
+          cursorGlow.style.left = cursorX + 'px';
+          cursorGlow.style.top = cursorY + 'px';
+          cursorGlowOuter.style.left = outerX + 'px';
+          cursorGlowOuter.style.top = outerY + 'px';
+
+          requestAnimationFrame(animate);
+        }
+        animate();
+
+        // Add hover effect for interactive elements
+        const interactiveElements = document.querySelectorAll('a, button, .nav-item, .btn-primary, .btn-secondary, .btn-project, .project-card, .certificate-item');
+        
+        interactiveElements.forEach(el => {
+          el.addEventListener('mouseenter', () => {
+            cursorGlow.classList.add('hover');
+            cursorGlowOuter.classList.add('hover');
+          });
+          
+          el.addEventListener('mouseleave', () => {
+            cursorGlow.classList.remove('hover');
+            cursorGlowOuter.classList.remove('hover');
+          });
+        });
+
+        document.addEventListener('mouseleave', () => {
+          cursorGlow.style.opacity = '0';
+          cursorGlowOuter.style.opacity = '0';
+        });
+
+        document.addEventListener('mouseenter', () => {
+          cursorGlow.style.opacity = '1';
+          cursorGlowOuter.style.opacity = '1';
         });
     </script>
   
 </body>
 </html>
-
