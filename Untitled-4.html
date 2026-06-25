@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet">
+    <title>Ngày Giỗ Tổ - Portfolio Project</title>
+    <style>
+        /* Reset & Base Styles */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+          line-height: 1.6;
+          color: #1a1a1a;
+          background: #ffffff;
+          overflow-x: hidden;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 24px;
+        }
+
+        /* Back Button */
+        .back-button {
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          width: 50px;
+          height: 50px;
+          background: transparent; /* Nền trong suốt */
+          border: 2px solid #000; /* Viền đen */
+          color: #000; /* Màu chữ đen */
+          font-size: 1.5rem;
+          cursor: pointer;
+          border-radius: 50%;
+          box-shadow: 0 0 10px #000; /* Thêm hiệu ứng đổ bóng nhẹ */
+          transition: transform 0.3s, box-shadow 0.3s;
+          z-index: 1000;
+        }
+
+        .back-button:hover {
+          transform: scale(1.1);
+          box-shadow: 0 0 25px #000; /* Hiệu ứng đổ bóng khi hover */
+        }
+
+        /* Hero Section */
+        .hero-section {
+          padding: 120px 0 80px;
+          background: linear-gradient(135deg, #faf8f5 0%, #ffffff 100%);
+        }
+
+        /* Added flex layout for hero content with image on right */
+        .hero-wrapper {
+          display: flex;
+          align-items: center;
+          gap: 64px;
+        }
+
+        .hero-content {
+          flex: 1;
+          max-width: 600px;
+        }
+
+        .hero-image-container {
+          flex: 0 0 400px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        /* Added golden glow and scale animation to hero image */
+        .hero-image {
+          width: 100%;
+          height: auto;
+          max-width: 400px;
+          filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.6)) 
+                  drop-shadow(0 0 80px rgba(255, 215, 0, 0.4))
+                  drop-shadow(0 20px 40px rgba(87, 40, 27, 0.15));
+          animation: glowAndFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes glowAndFloat {
+          0%, 100% {
+            transform: translateY(0px) scale(1);
+            filter: drop-shadow(0 0 40px rgba(255, 215, 0, 0.6)) 
+                    drop-shadow(0 0 80px rgba(255, 215, 0, 0.4))
+                    drop-shadow(0 20px 40px rgba(87, 40, 27, 0.15));
+          }
+          50% {
+            transform: translateY(-20px) scale(1.05);
+            filter: drop-shadow(0 0 60px rgba(255, 215, 0, 0.8)) 
+                    drop-shadow(0 0 100px rgba(255, 215, 0, 0.5))
+                    drop-shadow(0 25px 50px rgba(87, 40, 27, 0.2));
+          }
+        }
+        /* </CHANGE> */
+
+        .project-meta {
+          display: flex;
+          gap: 12px;
+          margin-bottom: 24px;
+          flex-wrap: wrap;
+        }
+
+        .meta-tag {
+          padding: 6px 16px;
+          background: #e1c28f;
+          color: #57281b;
+          border-radius: 20px;
+          font-size: 13px;
+          font-weight: 600;
+          letter-spacing: 0.3px;
+        }
+
+        /* Changed font to Playfair Display for traditional Vietnamese aesthetic */
+        .hero-title {
+          font-family: "Playfair Display", serif;
+          font-size: 64px;
+          font-weight: 800;
+          line-height: 1.1;
+          margin-bottom: 16px;
+          color: #57281b;
+          letter-spacing: -1px;
+        }
+        /* </CHANGE> */
+
+        .hero-subtitle {
+          font-size: 24px;
+          font-weight: 400;
+          color: #666;
+          margin-bottom: 48px;
+          line-height: 1.5;
+        }
+
+        .hero-stats {
+          display: flex;
+          gap: 48px;
+          margin-bottom: 40px;
+          padding: 32px 0;
+          border-top: 1px solid #e5e5e5;
+          border-bottom: 1px solid #e5e5e5;
+        }
+
+        .stat-item {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .stat-number {
+          font-size: 28px;
+          font-weight: 700;
+          color: #a24e3f;
+        }
+
+        .stat-label {
+          font-size: 14px;
+          color: #666;
+          font-weight: 500;
+        }
+
+        .cta-button {
+          display: inline-flex;
+          align-items: center;
+          gap: 8px;
+          padding: 14px 28px;
+          background: #a24e3f;
+          color: #ffffff;
+          border: none;
+          border-radius: 50px;
+          font-size: 16px;
+          font-weight: 600;
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+
+        }
+
+        .cta-button:hover {
+          background: #8a3f32;
+          transform: translateY(-2px);
+          box-shadow: 0 8px 16px rgba(162, 78, 63, 0.2);
+        }
+
+        /* Section Styles */
+        .section {
+          padding: 100px 0;
+        }
+
+        .section-alt {
+          background: #faf8f5;
+        }
+
+        .section-header {
+          text-align: center;
+          margin-bottom: 64px;
+        }
+
+        .section-title {
+          font-size: 48px;
+          font-weight: 700;
+          color: #57281b;
+          margin-bottom: 16px;
+          letter-spacing: -0.5px;
+        }
+
+        .section-description {
+          font-size: 18px;
+          color: #666;
+          max-width: 600px;
+          margin: 0 auto;
+        }
+
+        /* Overview Grid */
+        .overview-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+          gap: 32px;
+        }
+
+        .overview-card {
+          padding: 40px;
+          background: #ffffff;
+          border-radius: 16px;
+          border: 1px solid #e5e5e5;
+          transition: all 0.3s ease;
+        }
+
+        .overview-card:hover {
+          transform: translateY(-4px);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+        }
+
+        .card-title {
+          font-size: 20px;
+          font-weight: 700;
+          color: #a24e3f;
+          margin-bottom: 16px;
+        }
+
+        .card-text {
+          font-size: 16px;
+          color: #444;
+          line-height: 1.7;
+        }
+
+        /* Color Palette Showcase */
+        .color-palette-showcase {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+          gap: 32px;
+        }
+
+        .color-item {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .color-swatch {
+          width: 100%;
+          height: 120px;
+          border-radius: 12px;
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .color-info {
+          display: flex;
+          flex-direction: column;
+          gap: 4px;
+        }
+
+        .color-name {
+          font-size: 16px;
+          font-weight: 600;
+          color: #1a1a1a;
+        }
+
+        .color-hex {
+          font-size: 14px;
+          font-family: "Courier New", monospace;
+          color: #666;
+        }
+
+        .color-usage {
+          font-size: 13px;
+          color: #999;
+          margin-top: 4px;
+        }
+
+        /* Two Column Layout */
+        .two-column-layout {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+          gap: 64px;
+        }
+
+        .content-block {
+          display: flex;
+          flex-direction: column;
+          gap: 16px;
+        }
+
+        .block-label {
+          font-size: 13px;
+          font-weight: 700;
+          letter-spacing: 1.5px;
+          text-transform: uppercase;
+          color: #00848c;
+        }
+
+        .block-title {
+          font-size: 32px;
+          font-weight: 700;
+          color: #57281b;
+          line-height: 1.3;
+        }
+
+        .block-text {
+          font-size: 16px;
+          color: #444;
+          line-height: 1.8;
+          margin-bottom: 16px;
+        }
+
+        /* Features Grid */
+        .features-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+          gap: 32px;
+        }
+
+        .feature-card {
+          padding: 40px;
+          background: #ffffff;
+          border-radius: 16px;
+          border: 1px solid #e5e5e5;
+          transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+          border-color: #a24e3f;
+          box-shadow: 0 8px 24px rgba(162, 78, 63, 0.1);
+        }
+
+        .feature-icon {
+          width: 56px;
+          height: 56px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #e1c28f;
+          border-radius: 12px;
+          color: #57281b;
+          margin-bottom: 24px;
+        }
+
+        .feature-title {
+          font-size: 20px;
+          font-weight: 700;
+          color: #1a1a1a;
+          margin-bottom: 12px;
+        }
+
+        .feature-text {
+          font-size: 15px;
+          color: #666;
+          line-height: 1.7;
+        }
+
+        /* Image Showcase */
+        .image-showcase {
+          width: 100%;
+          border-radius: 16px;
+          overflow: hidden;
+          box-shadow: 0 16px 48px rgba(0, 0, 0, 0.12);
+        }
+
+        .showcase-image {
+          width: 100%;
+          height: auto;
+          display: block;
+        }
+
+        /* Process Timeline */
+        .process-timeline {
+          display: flex;
+          flex-direction: column;
+          gap: 48px;
+          max-width: 900px;
+          margin: 0 auto;
+        }
+
+        .process-step {
+          display: grid;
+          grid-template-columns: 80px 1fr;
+          gap: 32px;
+          position: relative;
+        }
+
+        .process-step:not(:last-child)::after {
+          content: "";
+          position: absolute;
+          left: 39px;
+          top: 80px;
+          width: 2px;
+          height: calc(100% + 48px);
+          background: linear-gradient(180deg, #a24e3f 0%, #e1c28f 100%);
+        }
+
+        .step-number {
+          width: 80px;
+          height: 80px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          background: #a24e3f;
+          color: #ffffff;
+          border-radius: 50%;
+          font-size: 24px;
+          font-weight: 700;
+          flex-shrink: 0;
+        }
+
+        .step-content {
+          padding-top: 12px;
+        }
+
+        .step-title {
+          font-size: 24px;
+          font-weight: 700;
+          color: #57281b;
+          margin-bottom: 12px;
+        }
+
+        .step-text {
+          font-size: 16px;
+          color: #444;
+          line-height: 1.8;
+        }
+
+        /* Results Grid */
+        .results-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 32px;
+        }
+
+        .result-card {
+          padding: 48px 40px;
+          background: #ffffff;
+          border-radius: 16px;
+          border: 2px solid #e5e5e5;
+          text-align: center;
+          transition: all 0.3s ease;
+        }
+
+        .result-card:hover {
+          border-color: #00848c;
+          transform: translateY(-4px);
+        }
+
+        .result-metric {
+          font-size: 56px;
+          font-weight: 700;
+          color: #a24e3f;
+          margin-bottom: 8px;
+        }
+
+        .result-label {
+          font-size: 18px;
+          font-weight: 600;
+          color: #1a1a1a;
+          margin-bottom: 16px;
+        }
+
+        .result-text {
+          font-size: 15px;
+          color: #666;
+          line-height: 1.6;
+        }
+
+        /* Learning List */
+        .learning-list {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .learning-list li {
+          padding-left: 32px;
+          position: relative;
+          font-size: 16px;
+          color: #444;
+          line-height: 1.7;
+        }
+
+        .learning-list li::before {
+          content: "→";
+          position: absolute;
+          left: 0;
+          color: #a24e3f;
+          font-weight: 700;
+          font-size: 20px;
+        }
+
+        .learning-list strong {
+          color: #57281b;
+          font-weight: 600;
+        }
+
+        /* CTA Section */
+        .cta-section {
+          background: linear-gradient(135deg, #57281b 0%, #a24e3f 100%);
+          color: #ffffff;
+        }
+
+        .cta-content {
+          text-align: center;
+          max-width: 700px;
+          margin: 0 auto;
+        }
+
+        .cta-title {
+          font-size: 48px;
+          font-weight: 700;
+          margin-bottom: 16px;
+          color: #ffffff;
+        }
+
+        .cta-text {
+          font-size: 20px;
+          margin-bottom: 40px;
+          color: rgba(255, 255, 255, 0.9);
+        }
+
+        .cta-button-large {
+          display: inline-flex;
+          align-items: center;
+          gap: 12px;
+          padding: 18px 36px;
+          background: #ffffff;
+          color: #57281b;
+          border: none;
+          border-radius: 50px;
+          font-size: 18px;
+          font-weight: 600;
+          text-decoration: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+        }
+
+        .cta-button-large:hover {
+          transform: translateY(-2px);
+          box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        .footer {
+          padding: 40px 0;
+          background: #faf8f5;
+          border-top: 1px solid #e5e5e5;
+        }
+
+        .footer-text {
+          text-align: center;
+          font-size: 14px;
+          color: #666;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+          .back-button {
+            top: 16px;
+            right: 16px;
+            padding: 10px 20px;
+            font-size: 14px;
+          }
+
+          .back-button span {
+            display: none;
+          }
+
+          .hero-section {
+            padding: 80px 0 60px;
+          }
+
+          /* Stack hero content vertically on mobile */
+          .hero-wrapper {
+            flex-direction: column-reverse;
+            gap: 40px;
+          }
+
+          .hero-image-container {
+            flex: 0 0 auto;
+            width: 100%;
+            max-width: 300px;
+          }
+          /* </CHANGE> */
+
+          .hero-title {
+            font-size: 40px;
+          }
+
+          .hero-subtitle {
+            font-size: 18px;
+          }
+
+          .hero-stats {
+            gap: 24px;
+          }
+
+          .section {
+            padding: 60px 0;
+          }
+
+          .section-title {
+            font-size: 32px;
+          }
+
+          .two-column-layout {
+            grid-template-columns: 1fr;
+            gap: 40px;
+          }
+
+          .overview-grid,
+          .features-grid,
+          .results-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .color-palette-showcase {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .process-step {
+            grid-template-columns: 60px 1fr;
+            gap: 20px;
+          }
+
+          .step-number {
+            width: 60px;
+            height: 60px;
+            font-size: 20px;
+          }
+
+          .process-step:not(:last-child)::after {
+            left: 29px;
+            top: 60px;
+          }
+
+          .cta-title {
+            font-size: 32px;
+          }
+
+          .cta-text {
+            font-size: 16px;
+          }
+        }
+
+        @media (max-width: 480px) {
+          .container {
+            padding: 0 16px;
+          }
+
+          .hero-title {
+            font-size: 32px;
+          }
+
+          .hero-subtitle {
+            font-size: 16px;
+          }
+
+          .meta-tag {
+            font-size: 12px;
+            padding: 5px 12px;
+          }
+
+          /* Smaller hero image on mobile */
+          .hero-image-container {
+            max-width: 250px;
+          }
+          /* </CHANGE> */
+
+          .color-palette-showcase {
+            grid-template-columns: 1fr;
+          }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="back-button" onclick="history.back()">&lt;</button>
+
+    <section class="hero-section">
+        <div class="container">
+            <!-- Wrapped hero content in flex container with image on right -->
+            <div class="hero-wrapper">
+                <div class="hero-content">
+                    <div class="project-meta">
+                        <span class="meta-tag">UX/UI Design</span>
+                        <span class="meta-tag">Web Development</span>
+                        <span class="meta-tag">Cultural Heritage</span>
+                    </div>
+                    <h1 class="hero-title">Ngày Giỗ Tổ</h1>
+                    <p class="hero-subtitle">Preserving Vietnamese Cultural Heritage Through Digital Innovation</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">2025</div>
+                            <div class="stat-label">Year</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">8 Weeks</div>
+                            <div class="stat-label">Duration</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">4 Members</div>
+                            <div class="stat-label">Team Size</div>
+                        </div>
+                    </div>
+
+                    <a href="https://www.figma.com/design/XpG29Qk2bjWnKQF9PQqoTT/D%E1%BB%B1-%C3%A1n-%22Ng%C3%A0y-Gi%E1%BB%97-T%E1%BB%95%22?node-id=85-771&p=f&t=cVmu9gfgH8UKTAzR-0" 
+                       target="_blank" 
+                       class="cta-button">
+                        View Live Demo
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                        </svg>
+                    </a>
+                </div>
+                
+                <div class="hero-image-container">
+                    <!-- Updated to correct vuahung.png image -->
+                    <img src="assets/images/vuahung.png" alt="Vua Hùng - Hung King Statue" class="hero-image" />
+                </div>
+            </div>
+            <!-- </CHANGE> -->
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Project Overview</h2>
+            </div>
+            <div class="overview-grid">
+                <div class="overview-card">
+                    <h3 class="card-title">Context</h3>
+                    <p class="card-text">Developed for the Webdev Adventure competition hosted by the University of Information Technology – Vietnam National University, Ho Chi Minh City. The challenge focused on leveraging technology to enhance learning experiences while preserving traditional cultural values.</p>
+                </div>
+                <div class="overview-card">
+                    <h3 class="card-title">My Role</h3>
+                    <p class="card-text">UX/UI Designer & Front-end Developer. Responsible for user research, information architecture, visual design, prototyping, and implementing the responsive front-end interface.</p>
+                </div>
+                <div class="overview-card">
+                    <h3 class="card-title">Tools & Technologies</h3>
+                    <p class="card-text">Figma for design and prototyping, HTML5/CSS3/JavaScript for development, responsive design principles, and accessibility standards (WCAG 2.1).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Design System</h2>
+                <p class="section-description">A carefully crafted color palette inspired by Vietnamese traditional aesthetics</p>
+            </div>
+            <div class="color-palette-showcase">
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #E1C28F;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Warm Beige</div>
+                        <div class="color-hex">#E1C28F</div>
+                        <div class="color-usage">Primary backgrounds, warmth</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #57281B;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Deep Brown</div>
+                        <div class="color-hex">#57281B</div>
+                        <div class="color-usage">Headers, traditional elements</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #A24E3F;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Terracotta</div>
+                        <div class="color-hex">#A24E3F</div>
+                        <div class="color-usage">Accents, CTAs</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #00848C;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Teal</div>
+                        <div class="color-hex">#00848C</div>
+                        <div class="color-usage">Links, interactive elements</div>
+                    </div>
+                </div>
+                <div class="color-item">
+                    <div class="color-swatch" style="background: #000000;"></div>
+                    <div class="color-info">
+                        <div class="color-name">Black</div>
+                        <div class="color-hex">#000000</div>
+                        <div class="color-usage">Body text, contrast</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="two-column-layout">
+                <div class="column">
+                    <div class="content-block">
+                        <div class="block-label">The Challenge</div>
+                        <h2 class="block-title">Problem Statement</h2>
+                        <p class="block-text">Despite being one of Vietnam's most significant national holidays, Hung Kings' Commemoration Day (Ngày Giỗ Tổ Hùng Vương) lacks a cohesive digital presence. Information is scattered across multiple sources, often presented in outdated formats that fail to engage younger generations.</p>
+                        <p class="block-text">The challenge was to create a platform that not only consolidates accurate historical and cultural information but also presents it in a way that resonates with modern users while maintaining cultural authenticity and respect.</p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content-block">
+                        <div class="block-label">Our Approach</div>
+                        <h2 class="block-title">Solution</h2>
+                        <p class="block-text">We designed and developed a comprehensive website that serves as both an educational resource and an interactive platform for cultural engagement. The solution bridges traditional values with modern web technologies to create an immersive experience.</p>
+                        <p class="block-text">By combining rich visual storytelling, intuitive navigation, and community-driven features, we created a digital space where users can learn about, participate in, and contribute to the preservation of this important cultural celebration.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Key Features & Design Decisions</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M3 9h18M9 21V9"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Cultural Visual Identity</h3>
+                    <p class="feature-text">Designed with traditional Vietnamese aesthetics in mind, featuring warm earth tones, refined decorative patterns inspired by ancient temples, and carefully selected imagery that evokes cultural familiarity and respect.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                            <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+                            <line x1="12" y1="22.08" x2="12" y2="12"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Intuitive Information Architecture</h3>
+                    <p class="feature-text">Structured content into clear sections: Homepage, Tour Schedule, Festival Activities, Community Contributions, and Donation Portal. Each section is designed for easy navigation and progressive disclosure of information.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 6v6l4 2"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Interactive Timeline</h3>
+                    <p class="feature-text">A visual timeline showcasing the history of Hung Kings and the evolution of the commemoration day, allowing users to explore historical events through an engaging, scroll-based narrative.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Community Engagement</h3>
+                    <p class="feature-text">Integrated donation system with QR code support and real-time "Top Donors" leaderboard to encourage community participation and promote transparency in cultural preservation efforts.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14" rx="2"/>
+                            <line x1="8" y1="21" x2="16" y2="21"/>
+                            <line x1="12" y1="17" x2="12" y2="21"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Responsive Design</h3>
+                    <p class="feature-text">Fully responsive layout optimized for all devices, ensuring consistent user experience from mobile phones to desktop computers. Special attention to touch interactions and mobile-first navigation patterns.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                            <circle cx="12" cy="12" r="3"/>
+                        </svg>
+                    </div>
+                    <h3 class="feature-title">Accessibility First</h3>
+                    <p class="feature-text">Designed with WCAG 2.1 AA standards in mind, featuring proper color contrast ratios, semantic HTML structure, keyboard navigation support, and screen reader compatibility to ensure inclusivity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Visual Design Showcase</h2>
+                <p class="section-description">Explore the key screens and user flows</p>
+            </div>
+            <div class="image-showcase">
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/image-dwVCYGfqFGWHNk7Z51DcYQA4twcJ0Y.png" alt="Project screens showcase" class="showcase-image" />
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Design Process</h2>
+            </div>
+            <div class="process-timeline">
+                <div class="process-step">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Research & Discovery</h3>
+                        <p class="step-text">Conducted user interviews with 25+ participants across different age groups to understand their knowledge and perception of Hung Kings' Day. Analyzed existing cultural websites and identified gaps in digital representation.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Information Architecture</h3>
+                        <p class="step-text">Created site maps and user flows based on research insights. Organized content into logical hierarchies that balance educational depth with ease of navigation. Conducted card sorting exercises to validate structure.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Visual Design</h3>
+                        <p class="step-text">Developed mood boards inspired by Vietnamese traditional architecture and art. Created a design system with culturally appropriate color palettes, typography, and visual elements. Iterated through multiple design concepts with stakeholder feedback.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Prototyping & Testing</h3>
+                        <p class="step-text">Built interactive prototypes in Figma and conducted usability testing with 15 users. Identified pain points in navigation and information comprehension. Refined interactions based on user feedback.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">05</div>
+                    <div class="step-content">
+                        <h3 class="step-title">Development & Launch</h3>
+                        <p class="step-text">Implemented responsive front-end with semantic HTML, modern CSS, and vanilla JavaScript. Ensured cross-browser compatibility and optimized performance. Conducted final QA testing before competition submission.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Impact & Results</h2>
+            </div>
+            <div class="results-grid">
+                <div class="result-card">
+                    <div class="result-metric">Top 10</div>
+                    <div class="result-label">Competition Finalist</div>
+                    <p class="result-text">Selected as one of the top 10 projects in the Webdev Adventure competition among 50+ submissions</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-metric">95%</div>
+                    <div class="result-label">User Satisfaction</div>
+                    <p class="result-text">Achieved 95% positive feedback in post-launch user testing for design aesthetics and usability</p>
+                </div>
+                <div class="result-card">
+                    <div class="result-metric">AA</div>
+                    <div class="result-label">Accessibility Score</div>
+                    <p class="result-text">Met WCAG 2.1 AA standards for accessibility, ensuring inclusive design for all users</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-alt">
+        <div class="container">
+            <div class="two-column-layout">
+                <div class="column">
+                    <div class="content-block">
+                        <div class="block-label">Reflection</div>
+                        <h2 class="block-title">Key Learnings</h2>
+                        <ul class="learning-list">
+                            <li><strong>Cultural Sensitivity:</strong> Learned the importance of balancing modern design trends with cultural authenticity. Every design decision was validated against cultural appropriateness.</li>
+                            <li><strong>User-Centered Design:</strong> Discovered that different age groups interact with cultural content differently. Younger users preferred interactive elements while older users valued detailed historical information.</li>
+                            <li><strong>Technical Constraints:</strong> Learned to optimize performance while maintaining rich visual experiences. Implemented lazy loading and image optimization techniques.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="content-block">
+                        <div class="block-label">Future Improvements</div>
+                        <h2 class="block-title">Next Steps</h2>
+                        <ul class="learning-list">
+                            <li><strong>Multilingual Support:</strong> Add English and other language options to reach international audiences interested in Vietnamese culture.</li>
+                            <li><strong>Virtual Tour:</strong> Implement 360° virtual tours of Hung Kings Temple using WebGL technology for immersive experiences.</li>
+                            <li><strong>Mobile App:</strong> Develop a companion mobile application with offline access to content and location-based features for visitors.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">Want to see more details?</h2>
+                <p class="cta-text">Explore the complete case study with detailed wireframes, user flows, and design iterations</p>
+                <a href="https://www.figma.com/design/XpG29Qk2bjWnKQF9PQqoTT/D%E1%BB%B1-%C3%A1n-%22Ng%C3%A0y-Gi%E1%BB%97-T%E1%BB%95%22?node-id=85-771&p=f&t=cVmu9gfgH8UKTAzR-0" 
+                   target="_blank" 
+                   class="cta-button-large">
+                    View Full Case Study on Figma
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M7 7h8.586L5.293 17.293l1.414 1.414L17 8.414V17h2V5H7v2z"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-text">© 2025 Portfolio Project - Ngày Giỗ Tổ Hùng Vương</p>
+        </div>
+    </footer>
+</body>
+</html>
