@@ -1825,3 +1825,38 @@ button:active {
   position: relative;
   z-index: 1;
 }
+
+.hero-floating {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  animation: floating 3s ease-in-out infinite;
+  filter: drop-shadow(0 0 20px rgba(8, 247, 254, 0.3));
+  flex-shrink: 0;
+  align-self: center;        /* thêm */
+  margin-top: -60px;         /* kéo lên bù phần bị lệch */
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-20px); }
+}
+
+/* Ẩn trên mobile, hiện từ tablet trở lên */
+@media (max-width: 767px) {
+  .hero-floating {
+    display: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .hero-floating {
+    max-width: 450px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hero-floating {
+    max-width: 520px;
+  }
+}

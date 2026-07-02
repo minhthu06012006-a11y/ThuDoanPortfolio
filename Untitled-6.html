@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AirWatch Vietnam: UX/UI Case Study</title>
+    <style>
+        /* ===== BASE ===== */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Helvetica Neue', Arial, sans-serif; color: #1e293b; background: #f0f9ff; line-height: 1.7; }
+
+        /* ===== LAYOUT ===== */
+        .section-wrapper { width: 100%; padding: 60px 20px; display: flex; justify-content: center; }
+        .content-container { max-width: 1400px; width: 100%; }
+        .project-section { display: flex; flex-wrap: wrap; gap: 48px; }
+
+        /* ===== LEFT: HERO ===== */
+        .hero-section { flex: 1; min-width: 280px; display: flex; flex-direction: column; gap: 22px; align-items: center; padding: 20px; }
+        .title-large { font-size: 60px; font-weight: 700; color: #0369a1; letter-spacing: -1px; }
+        .title-medium { font-size: 20px; font-weight: 300; color: #0284c7; margin-top: -14px; text-align: center; }
+
+        /* ===== PROJECT IMAGE ===== */
+        .project-image { width: 100%; border-radius: 14px; box-shadow: 0 4px 24px rgba(3,105,161,0.15); margin: 8px 0; transition: box-shadow 0.3s; }
+        .project-image:hover { box-shadow: 0 8px 36px rgba(3,105,161,0.25); }
+
+        /* ===== CTA BUTTON ===== */
+        .cta-button { width: 270px; padding: 13px 24px; background: linear-gradient(135deg, #0369a1, #38bdf8); border: none; color: #fff; font-size: 1rem; cursor: pointer; border-radius: 30px; box-shadow: 0 4px 14px rgba(3,105,161,0.3); transition: transform 0.3s, box-shadow 0.3s; font-family: inherit; }
+        .cta-button:hover { transform: scale(1.05); box-shadow: 0 6px 20px rgba(3,105,161,0.45); }
+
+        /* ===== COLOR PALETTE ===== */
+        .palette-label { font-size: 11px; color: #0369a1; text-transform: uppercase; letter-spacing: 1.2px; align-self: flex-start; font-weight: 600; }
+        .color-palette { display: flex; gap: 12px; flex-wrap: wrap; }
+        .color-item { display: flex; flex-direction: column; align-items: center; gap: 5px; }
+        .color-circle { width: 52px; height: 52px; border-radius: 50%; transition: transform 0.3s; box-shadow: 0 2px 8px rgba(0,0,0,0.15); cursor: default; }
+        .color-circle:hover { transform: scale(1.2); }
+        .color-hex { font-size: 9px; color: #475569; font-family: 'Courier New', monospace; }
+
+        /* ===== AQI DEMO ===== */
+        .aqi-row { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; }
+        .aqi-badge { padding: 5px 13px; border-radius: 20px; font-size: 11px; font-weight: 700; color: #fff; font-family: 'Courier New', monospace; letter-spacing: 0.3px; }
+        .aqi-range { font-size: 9px; color: #64748b; text-align: center; margin-top: 2px; font-family: 'Courier New', monospace; }
+
+        /* ===== INTRO BLOCK (LEFT SIDEBAR CARD) ===== */
+        .intro-block { width: 100%; padding: 20px 22px; background: #ffffff; border: 1px solid #bae6fd; border-radius: 12px; box-shadow: 0 2px 12px rgba(3,105,161,0.08); }
+        .intro-block h3 { font-size: 0.8rem; color: #0369a1; margin: 16px 0 8px; text-transform: uppercase; letter-spacing: 1.2px; font-weight: 700; }
+        .intro-block h3:first-child { margin-top: 0; }
+        .intro-block ul { list-style-type: disc; padding-left: 18px; }
+        .intro-block li { margin-bottom: 7px; font-size: 13.5px; color: #475569; }
+
+        /* ===== ROLE TAGS ===== */
+        .role-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+        .role-tag { padding: 4px 12px; border: 1px solid #7dd3fc; border-radius: 20px; font-size: 12px; color: #0369a1; font-family: 'Courier New', monospace; background: #f0f9ff; }
+
+        /* ===== RIGHT: CASE STUDY ===== */
+        .text-content { flex: 1; min-width: 300px; }
+
+        .title-section { font-weight: 700; font-size: 1.05rem; margin: 34px 0 12px; text-transform: uppercase; letter-spacing: 1.5px; color: #0369a1; border-left: 3px solid #38bdf8; padding-left: 12px; }
+        .title-section:first-child { margin-top: 0; }
+
+        .body-text { font-size: 15px; margin-bottom: 14px; color: #475569; line-height: 1.75; }
+        .highlight { color: #0369a1; font-weight: 600; }
+
+        /* ===== DIVIDER ===== */
+        .divider { width: 100%; height: 1px; background: linear-gradient(to right, transparent, #bae6fd, transparent); margin: 22px 0; }
+
+        /* ===== QUOTE ===== */
+        .insight-quote { border-left: 3px solid #38bdf8; padding: 12px 18px; margin: 14px 0; background: #e0f2fe; border-radius: 0 8px 8px 0; font-style: italic; color: #0369a1; font-size: 14px; line-height: 1.65; }
+
+        /* ===== TABLE ===== */
+        table { width: 100%; border-collapse: collapse; margin: 14px 0; border: 1px solid #bae6fd; border-radius: 8px; overflow: hidden; }
+        th, td { padding: 11px 14px; border: 1px solid #e0f2fe; text-align: left; color: #334155; font-size: 14px; }
+        th { background: #e0f2fe; color: #0369a1; font-size: 12px; text-transform: uppercase; letter-spacing: 0.6px; }
+        tr:hover td { background: #f0f9ff; }
+
+        /* ===== PROCESS STEPS ===== */
+        .process-steps { display: flex; flex-direction: column; gap: 12px; margin: 14px 0; }
+        .process-step { display: flex; align-items: flex-start; gap: 14px; padding: 14px 16px; background: #ffffff; border: 1px solid #bae6fd; border-radius: 10px; box-shadow: 0 1px 6px rgba(3,105,161,0.06); }
+        .step-number { width: 30px; height: 30px; border-radius: 50%; background: linear-gradient(135deg, #0369a1, #38bdf8); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; flex-shrink: 0; color: #fff; }
+        .step-content h4 { color: #0369a1; font-size: 14px; margin-bottom: 4px; font-weight: 600; }
+        .step-content p { color: #475569; font-size: 13.5px; }
+
+        /* ===== CHALLENGES ===== */
+        .challenge-block { padding: 16px 18px; background: #ffffff; border: 1px solid #bae6fd; border-radius: 10px; margin-bottom: 12px; box-shadow: 0 1px 6px rgba(3,105,161,0.06); }
+        .challenge-block .challenge-title { font-size: 14px; color: #b45309; font-weight: 600; margin-bottom: 6px; }
+        .challenge-block .solution { font-size: 13.5px; color: #475569; margin-top: 8px; padding-top: 8px; border-top: 1px solid #e0f2fe; }
+        .challenge-block .solution span { color: #0369a1; font-weight: 600; }
+
+        /* ===== METRICS ===== */
+        .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 12px; margin: 14px 0; }
+        .metric-card { padding: 16px 10px; background: #ffffff; border: 1px solid #bae6fd; border-radius: 10px; text-align: center; box-shadow: 0 2px 8px rgba(3,105,161,0.08); }
+        .metric-number { font-size: 24px; font-weight: 700; color: #0369a1; display: block; }
+        .metric-label { font-size: 10px; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 4px; display: block; }
+
+        /* ===== TECH TAGS ===== */
+        .tech-tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0; }
+        .tech-tag { padding: 4px 12px; border: 1px solid #7dd3fc; border-radius: 20px; font-size: 12px; color: #0369a1; font-family: 'Courier New', monospace; background: #f0f9ff; }
+
+        /* ===== BACK BUTTON ===== */
+        .back-button { position: fixed; top: 20px; right: 20px; width: 50px; height: 50px; background: linear-gradient(135deg, #0369a1, #38bdf8); border: none; color: #fff; font-size: 1.3rem; cursor: pointer; border-radius: 50%; box-shadow: 0 4px 14px rgba(3,105,161,0.35); transition: transform 0.3s, box-shadow 0.3s; z-index: 1000; }
+        .back-button:hover { transform: scale(1.1); box-shadow: 0 6px 22px rgba(3,105,161,0.5); }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .project-section { flex-direction: column; }
+            .back-button { top: 10px; right: 10px; width: 40px; height: 40px; font-size: 1.1rem; }
+            .title-large { font-size: 42px; }
+            .metrics-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+</head>
+<body>
+
+    <button class="back-button" onclick="history.back()">&#8592;</button>
+
+    <div class="section-wrapper">
+        <div class="content-container">
+            <div class="project-section">
+
+                <!-- ============================
+                     LEFT COLUMN: HERO
+                ============================= -->
+                <div class="hero-section">
+                    <h1 class="title-large">AirWatch</h1>
+                    <h2 class="title-medium">Vietnam Air Quality Monitor</h2>
+
+                    <!-- cover image: screenshot of airwatchvietnam.vercel.app
+                         name it airwatch-cover.png and place it in assets/images/ -->
+                    <img class="project-image"
+                         src="assets/images/airwatchlive.jpg"
+                         alt="AirWatch Vietnam Dashboard"
+                         onerror="this.style.background='linear-gradient(135deg,#08111f,#0c2a4a)';this.style.minHeight='200px';this.style.display='block';">
+
+                    <button class="cta-button" onclick="window.location.href='https://airwatchvietnam.vercel.app/'">
+                        View Live Website ↗
+                    </button>
+
+                    <!-- Color Palette -->
+                    <p class="palette-label">Color Palette</p>
+                    <div class="color-palette">
+                        <div class="color-item">
+                            <div class="color-circle" style="background:#08111f; border:1px solid #38bdf8;"></div>
+                            <span class="color-hex">#08111f</span>
+                        </div>
+                        <div class="color-item">
+                            <div class="color-circle" style="background:#0369a1;"></div>
+                            <span class="color-hex">#0369a1</span>
+                        </div>
+                        <div class="color-item">
+                            <div class="color-circle" style="background:#38bdf8;"></div>
+                            <span class="color-hex">#38bdf8</span>
+                        </div>
+                        <div class="color-item">
+                            <div class="color-circle" style="background:#7dd3fc;"></div>
+                            <span class="color-hex">#7dd3fc</span>
+                        </div>
+                        <div class="color-item">
+                            <div class="color-circle" style="background:#e0f2fe;"></div>
+                            <span class="color-hex">#e0f2fe</span>
+                        </div>
+                    </div>
+
+                    <!-- AQI System -->
+                    <div class="intro-block">
+                        <h3>AQI Color System</h3>
+                        <p style="font-size:13px;color:#475569;margin-bottom:10px;">
+                            Color-coded to the WHO standard — users identify danger levels instantly, without needing to read numbers.
+                        </p>
+                        <div class="aqi-row">
+                            <div>
+                                <div class="aqi-badge" style="background:#22c55e;">Good</div>
+                                <div class="aqi-range">0 – 50</div>
+                            </div>
+                            <div>
+                                <div class="aqi-badge" style="background:#eab308;color:#1a1a00;">Moderate</div>
+                                <div class="aqi-range">51 – 100</div>
+                            </div>
+                            <div>
+                                <div class="aqi-badge" style="background:#f97316;">Unhealthy</div>
+                                <div class="aqi-range">101 – 150</div>
+                            </div>
+                            <div>
+                                <div class="aqi-badge" style="background:#ef4444;">Very Unhlthy</div>
+                                <div class="aqi-range">151 – 200</div>
+                            </div>
+                            <div>
+                                <div class="aqi-badge" style="background:#a855f7;">Hazardous</div>
+                                <div class="aqi-range">200+</div>
+                            </div>
+                        </div>
+
+                        <h3>My Role</h3>
+                        <div class="role-tags">
+                            <span class="role-tag">UX Research</span>
+                            <span class="role-tag">UI Design</span>
+                            <span class="role-tag">Front-end Dev</span>
+                            <span class="role-tag">Data Visualization</span>
+                        </div>
+
+                        <h3>Tech Stack</h3>
+                        <div class="role-tags">
+                            <span class="role-tag">Next.js</span>
+                            <span class="role-tag">Tailwind CSS</span>
+                            <span class="role-tag">Supabase</span>
+                            <span class="role-tag">PostgreSQL</span>
+                            <span class="role-tag">IQAir API</span>
+                            <span class="role-tag">Vercel</span>
+                        </div>
+
+                        <h3>Key Highlights</h3>
+                        <ul>
+                            <li>Real-time PM2.5 — updated every 3 minutes</li>
+                            <li>Interactive map — residents can report pollution hotspots themselves</li>
+                            <li>Cache-aside pattern — response time under 4 seconds</li>
+                            <li>Responsive: mobile, tablet, desktop</li>
+                            <li>100% open-source, deployed on Vercel</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ============================
+                     RIGHT COLUMN: CASE STUDY
+                ============================= -->
+                <div class="text-content">
+
+                    <h2 class="title-section">Project Overview</h2>
+                    <p class="body-text">
+                        <span class="highlight">AirWatch Vietnam</span> is a real-time air quality monitoring web platform that lets residents track PM2.5 levels in major cities and proactively report pollution hotspots in their own neighborhoods.
+                    </p>
+                    <p class="body-text">
+                        The project was carried out as part of the DREAMLAB team's Smart City research, with the web dashboard being entirely my responsibility — from UX research through to front-end development.
+                    </p>
+
+                    <div class="divider"></div>
+
+                    <h2 class="title-section">Problem Statement</h2>
+                    <p class="body-text">
+                        Air pollution in Vietnam has reached alarming levels, yet <span class="highlight">residents lack a simple tool</span> to monitor air quality in the specific area where they live.
+                    </p>
+                    <div class="insight-quote">
+                        "Environmental data exists — but it's locked away in specialist reports. People don't know whether it's safe to go outside today."
+                    </div>
+                    <table>
+                        <tr><th>Gap</th><th>Manifestation</th><th>Impact</th></tr>
+                        <tr><td>Lack of local data</td><td>Only macro-level figures available, not reflecting individual neighborhoods</td><td>Residents can't take specific action</td></tr>
+                        <tr><td>Lack of an interactive channel</td><td>No place for residents to report pollution hotspots directly</td><td>Authorities lack on-the-ground data</td></tr>
+                    </table>
+
+                    <div class="divider"></div>
+
+                    <h2 class="title-section">Understanding the User</h2>
+                    <p class="body-text">Two user groups with completely different needs:</p>
+                    <table>
+                        <tr><th>Group</th><th>Primary goal</th><th>Pain point</th><th>Design implication</th></tr>
+                        <tr>
+                            <td><strong style="color:#0369a1;">General public</strong><br>All ages</td>
+                            <td>Know whether it's safe to go outside today</td>
+                            <td>Don't understand technical metrics like AQI, PM2.5</td>
+                            <td>Intuitive color-coding, simple language</td>
+                        </tr>
+                        <tr>
+                            <td><strong style="color:#0369a1;">Regulatory bodies</strong><br>Experts</td>
+                            <td>Track trends, identify hotspots</td>
+                            <td>Data is scattered and hard to aggregate</td>
+                            <td>Data dashboard, heat-map visualization</td>
+                        </tr>
+                    </table>
+
+                    <div class="divider"></div>
+
+                    <h2 class="title-section">Design Process</h2>
+                    <div class="process-steps">
+                        <div class="process-step">
+                            <div class="step-number">1</div>
+                            <div class="step-content">
+                                <h4>Define & Research</h4>
+                                <p>Analyzed the urban environmental problem. Studied existing monitoring systems (IQAir, AQMS, AirVisual) to identify UX gaps that these platforms had not yet solved.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">2</div>
+                            <div class="step-content">
+                                <h4>Information Architecture</h4>
+                                <p>Organized the information flow: Landing → Live Map → Report Submission → Data Insights. Every key action takes a maximum of 2–3 steps to complete.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">3</div>
+                            <div class="step-content">
+                                <h4>Visual Design System</h4>
+                                <p>Built a navy/cyan color palette — psychologically associated with clean air, scientific rigor, and trustworthiness. AQI color-coding fully synced with WHO's international color standard.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">4</div>
+                            <div class="step-content">
+                                <h4>Interaction Design</h4>
+                                <p>Designed an interactive map for location-based pollution reporting. Instant feedback: reports appear on the map immediately with no reload needed — creating a sense that every contribution has immediate value.</p>
+                            </div>
+                        </div>
+                        <div class="process-step">
+                            <div class="step-number">5</div>
+                            <div class="step-content">
+                                <h4>Develop & Optimize</h4>
+                                <p>Built with Next.js + Tailwind CSS. Handled performance with a cache-aside pattern on PostgreSQL, cutting API latency from 15–20 seconds down to under 4 seconds.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <h2 class="title-section">Key Design Decisions</h2>
+                    <table>
+                        <tr><th>Decision</th><th>Rationale</th><th>Outcome</th></tr>
+                        <tr>
+                            <td>Navy/cyan as the primary color</td>
+                            <td>Color psychology — associated with air and cleanliness</td>
+                            <td>Users recognize the theme immediately from the visuals</td>
+                        </tr>
+                        <tr>
+                            <td>Color-coded AQI badges instead of raw numbers</td>
+                            <td>"AQI 152" is meaningless to the average person</td>
+                            <td>Instantly readable: red = dangerous</td>
+                        </tr>
+                        <tr>
+                            <td>Map-centric layout</td>
+                            <td>Users care more about their own area than national-level figures</td>
+                            <td>Increased personalization and engagement</td>
+                        </tr>
+                        <tr>
+                            <td>Streamlined 3-step report form</td>
+                            <td>Lowers the barrier for users to contribute data</td>
+                            <td>Applies Nudge Theory — reporting becomes a natural behavior</td>
+                        </tr>
+                        <tr>
+                            <td>Auto-updates every 3 minutes</td>
+                            <td>Air quality data changes quickly and needs near real-time updates</td>
+                            <td>Accurate information at all times without manual reloads</td>
+                        </tr>
+                    </table>
+
+                    <div class="divider"></div>
+
+                    <h2 class="title-section">Challenges & Solutions</h2>
+
+                    <div class="challenge-block">
+                        <div class="challenge-title">⚡ Challenge 1 — API Latency</div>
+                        <p style="font-size:13.5px;color:#94b8d4;">The IQAir API responded slowly, taking 15–20 seconds and causing serious frustration during page load.</p>
+                        <div class="solution"><span>→ Solution:</span> Cache-aside pattern with PostgreSQL — data cached for 3 minutes, cutting response time to under 4 seconds while still keeping things near real-time.</div>
+                    </div>
+
+                    <div class="challenge-block">
+                        <div class="challenge-title">⚡ Challenge 2 — Accessibility for all ages</div>
+                        <p style="font-size:13.5px;color:#475569;">A diverse user base ranging from students to the elderly — the interface needed to be instantly understandable for everyone, including colorblind users.</p>
+                        <div class="solution"><span>→ Solution:</span> International-standard AQI color-coding plus clear text labels, so meaning doesn't rely on color alone. A minimalist layout kept cognitive load low.</div>
+                    </div>
+
+                    <div class="challenge-block">
+                        <div class="challenge-title">⚡ Challenge 3 — Motivating user contribution</div>
+                        <p style="font-size:13.5px;color:#475569;">Users are often unwilling to spend time reporting if they don't see immediate value.</p>
+                        <div class="solution"><span>→ Solution:</span> Reports appear on the map immediately after submission (no reload needed) — creating an instant feedback loop that applies Nudge Theory to encourage contribution behavior.</div>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <h2 class="title-section">Results & Impact</h2>
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <span class="metric-number">&lt;4s</span>
+                            <span class="metric-label">Response time</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-number">3 min</span>
+                            <span class="metric-label">Data refresh</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-number">3</span>
+                            <span class="metric-label">Steps to report</span>
+                        </div>
+                        <div class="metric-card">
+                            <span class="metric-number">2</span>
+                            <span class="metric-label">User groups served</span>
+                        </div>
+                    </div>
+                    <p class="body-text">
+                        The website was successfully deployed on Vercel, integrating real data from the IQAir API and the user community. The system met its near-real-time goal while remaining simple enough for every type of user.
+                    </p>
+
+                    <div class="divider"></div>
+
+                    <h2 class="title-section">Learnings & Reflections</h2>
+                    <p class="body-text">
+                        This project taught me that <span class="highlight">UX isn't just about a beautiful interface</span> — it's about actually solving a real user problem. When designing for complex data like AQI and PM2.5, the biggest challenge was "translating" technical information into language ordinary people could understand and act on immediately.
+                    </p>
+                    <p class="body-text">
+                        On the technical side, handling performance myself (caching, API optimization) gave me a much clearer understanding of the relationship between <span class="highlight">design decisions and technical constraints</span> — an important perspective when working in an interdisciplinary environment.
+                    </p>
+                    <p class="body-text">
+                        If I were to continue this project, I'd run real usability testing with users and add push notifications for when AQI crosses dangerous thresholds — a gap in the current solution.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
