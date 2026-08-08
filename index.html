@@ -115,129 +115,913 @@
         </div>
     </section>
       
-
     <section id="projects" class="projects-section">
         <div class="content-wrapper">
             <div class="section-header">
                 <span class="section-title">#</span>
                 <span class="section-title-text">projects</span>
                 <div class="section-line"></div>
-                <span class="view-all">View all ~~></span>
             </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <img src="assets/images/img_rectangle_22.png" alt="Find your Passion" class="project-image" />
-                    <div class="project-tech">Figma Framer</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Find your Passion</h3>
-                        <p class="project-description">UX/UI Design - Final Project for the UX/UI Design Course</p>
-                        <div class="project-buttons">
-                            <button class="btn-project btn-project-primary" onclick="window.location.href='Untitled-1.html'">
-                                Overview <~>
-                            </button>
-                            <button class="btn-project btn-project-secondary" onclick="window.location.href='https://www.figma.com/design/X3Te8RePqi8xFO7NOMlj3l/Find-your-Passion---Esport-Website?node-id=1-2';">
-                                Short cut >=
-                            </button>
-                        </div>
-                    </div>
+
+            <!-- Category tabs -->
+            <div class="project-tabs" role="tablist" aria-label="Project categories">
+                <button class="tab-btn active" data-category="uxui" role="tab" aria-selected="true">UX/UI</button>
+                <button class="tab-btn" data-category="coding" role="tab" aria-selected="false">Coding</button>
+                <button class="tab-btn" data-category="art" role="tab" aria-selected="false">Art</button>
+            </div>
+
+            <div class="project-feed">
+                <!-- Floating index counter (desktop) -->
+                <div class="project-counter" aria-hidden="true">
+                    <span class="counter-current">01</span><span class="counter-sep">/</span><span class="counter-total">02</span>
                 </div>
-                <div class="project-card">
-                    <img src="assets/images/img_rectangle_22_276x562.png" alt="NOCTOPUS" class="project-image" />
-                    <div class="project-tech">HTML CSS Javascript</div>
-                    <div class="project-info">
-                        <h3 class="project-title">NOCTOPUS<br />Time to go to bed</h3>
-                        <p class="project-description">Website Development - Final Project for the Programming Course at University</p>
-                        <div class="project-buttons">
-                            <button class="btn-project btn-project-primary" onclick="window.location.href='Untitled-2.html'">
-                                Overview <~>
-                            </button>
-                            <button class="btn-project btn-project-secondary" onclick="window.location.href='https://minhthu06012006-a11y.github.io/timetogotobed/';">
-                                Short cut >=
-                            </button>
+
+                <!-- UX/UI -->
+                <div class="feed-group active" data-category="uxui">
+                    <article class="project-story">
+                        <span class="story-index">01</span>
+                        <div class="story-hero">
+                            <div class="story-media">
+                                <img src="assets/images/img_rectangle_22_1.png" alt="Ngày Giỗ Tổ" class="story-image" />
+                            </div>
+                            <div class="story-content">
+                                <div class="story-tags"><span>Figma</span><span>HTML</span><span>CSS</span><span>CreateJS</span><span>Python</span></div>
+                                <h3 class="story-title">Ngày Giỗ Tổ</h3>
+                                <p class="story-desc">Preserving Vietnamese cultural heritage through digital innovation — built for the Webdev Adventure : Web Software Development Competition.</p>
+                                <div class="story-links">
+                                    <a class="story-link" href="https://www.figma.com/design/XpG29Qk2bjWnKQF9PQqoTT/" target="_blank" rel="noopener">View on Figma ↗</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="story-details">
+                            <div class="detail-row">
+                                <div class="detail-block">
+                                    <h4>Overview</h4>
+                                    <p>Built for the Webdev Adventure competition hosted by UIT – VNU HCMC, with a 4-person team over 8 weeks. Role: UX/UI Designer & Front-end Developer, covering research, IA, visual design and a responsive, WCAG 2.1-conscious build.</p>
+                                </div>
+                                <div class="detail-block">
+                                    <h4>Problem & Solution</h4>
+                                    <p>Hùng Kings' Commemoration Day lacks a cohesive digital presence — information is scattered and outdated. The site consolidates history, festival activities and community contributions into one platform that stays culturally authentic while feeling modern.</p>
+                                </div>
+                            </div>
+                            <div class="detail-palette">
+                                <div class="palette-item"><div class="palette-swatch" style="background:#E1C28F;"></div><span class="palette-name">Warm Beige</span></div>
+                                <div class="palette-item"><div class="palette-swatch" style="background:#57281B;"></div><span class="palette-name">Deep Brown</span></div>
+                                <div class="palette-item"><div class="palette-swatch" style="background:#A24E3F;"></div><span class="palette-name">Terracotta</span></div>
+                                <div class="palette-item"><div class="palette-swatch" style="background:#00848C;"></div><span class="palette-name">Teal</span></div>
+                            </div>
+                            <div class="detail-block">
+                                <h4>Key Features</h4>
+                                <ul>
+                                    <li><strong>Cultural Visual Identity:</strong> warm earth tones and decorative patterns inspired by ancient temples.</li>
+                                    <li><strong>Interactive Timeline:</strong> a scroll-based narrative through the history of the Hùng Kings.</li>
+                                    <li><strong>Community Engagement:</strong> a donation system with QR support and a live "Top Donors" leaderboard.</li>
+                                    <li><strong>Accessibility First:</strong> WCAG 2.1 AA-compliant contrast, semantics and keyboard navigation.</li>
+                                </ul>
+                            </div>
+                            <div class="detail-stats">
+                                <div class="stat-badge"><span class="stat-num">Top 10</span><span class="stat-label">Finalist among 50+ teams</span></div>
+                                <div class="stat-badge"><span class="stat-num">95%</span><span class="stat-label">User satisfaction</span></div>
+                                <div class="stat-badge"><span class="stat-num">AA</span><span class="stat-label">WCAG 2.1 accessibility</span></div>
+                            </div>
+                            <div class="detail-block">
+                                <h4>Learnings</h4>
+                                <p>Balancing modern design trends with cultural authenticity took constant validation. Next steps: multilingual support and a 360° virtual tour of the Hùng Kings Temple.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-story">
+                        <span class="story-index">02</span>
+                        <div class="story-hero">
+                            <div class="story-media">
+                                <img src="assets/images/image1.png" alt="Tết ở trong ta" class="story-image" />
+                            </div>
+                            <div class="story-content">
+                                <div class="story-tags"><span>UX/UI Design</span></div>
+                                <h3 class="story-title">Tết ở trong ta</h3>
+                                <p class="story-desc">An interactive exhibition concept, poster and website inspired by bánh chưng and Tết traditions. Final project for the Arttech Theory Course.</p>
+                                <div class="story-links">
+                                    <a class="story-link" href="https://www.figma.com/design/f6V7bf57vcoOZPHvrr0bEr/" target="_blank" rel="noopener">View on Figma ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="story-details">
+                            <div class="detail-row">
+                                <div class="detail-block">
+                                    <h4>Overview</h4>
+                                    <p>A digital platform built to showcase an exhibition concept honoring Hùng King's Commemoration Day, blending art and technology into an interactive homepage that simulates unwrapping bánh chưng.</p>
+                                </div>
+                                <div class="detail-block">
+                                    <h4>Problem & Research</h4>
+                                    <p>Surveys with 30 participants found 70% craved a sense of cultural immersion. Personas guided two needs at once: nostalgia for older visitors, and education for younger, curious students.</p>
+                                </div>
+                            </div>
+                            <div class="detail-gallery">
+                                <img src="assets/images/img_rectangle_21.png" alt="Homepage">
+                                <img src="assets/images/img_rectangle_20.png" alt="Gallery page">
+                            </div>
+                            <div class="detail-stats">
+                                <div class="stat-badge"><span class="stat-num">35%</span><span class="stat-label">Engagement boost after testing</span></div>
+                                <div class="stat-badge"><span class="stat-num">40%</span><span class="stat-label">Simulated cultural-awareness lift</span></div>
+                            </div>
+                            <div class="detail-block">
+                                <h4>Learnings</h4>
+                                <p>Teamwork was essential to balance cultural authenticity with playful interactivity — next step is layering in even more interactive storytelling.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-story">
+                        <span class="story-index">03</span>
+                        <div class="story-hero">
+                            <div class="story-media">
+                                <img src="assets/images/focuspal-cover.png" alt="Focus Pal App" class="story-image" />
+                            </div>
+                            <div class="story-content">
+                                <div class="story-tags">
+                                    <span>UX/UI Design</span><span>Mobile App</span><span>Figma</span><span>Research</span>
+                                </div>
+                                <h3 class="story-title">Focus Pal</h3>
+                                <p class="story-desc">A gamified focus app that turns boring study sessions into a pet-raising journey — designed for Gen Z students who need motivation, not just a timer.</p>
+                                <div class="story-links">
+                                    <a class="story-link" href="https://www.figma.com/design/6l4tEdlmPAcbuNZLKzTfHW/Focus-App?node-id=0-1" target="_blank" rel="noopener">View on Figma ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    
+                        <div class="story-details">
+                    
+                            <!-- 01 Overview -->
+                            <div class="cs-section">
+                                <div class="cs-label">01 — Overview</div>
+                                <div class="detail-row">
+                                    <div class="detail-block">
+                                        <h4>The Problem</h4>
+                                        <p>Students need their phones for studying, but the same device constantly pulls them away. Existing focus apps are either too rigid or too generic — they don't create emotional connection or lasting habits.</p>
+                                    </div>
+                                    <div class="detail-block">
+                                        <h4>The Solution</h4>
+                                        <p>Focus Pal reframes every focus session as caring for a virtual companion. When you focus, your Pal grows. When you quit early, your Pal suffers. The emotional stakes make staying on task feel rewarding, not punishing.</p>
+                                    </div>
+                                </div>
+                                <div class="detail-stats">
+                                    <div class="stat-badge"><span class="stat-num">102</span><span class="stat-label">Survey participants</span></div>
+                                    <div class="stat-badge"><span class="stat-num">86%</span><span class="stat-label">Are students</span></div>
+                                    <div class="stat-badge"><span class="stat-num">47%</span><span class="stat-label">Want virtual pet gamification</span></div>
+                                    <div class="stat-badge"><span class="stat-num">60%</span><span class="stat-label">Rate their focus ≤ 3/5</span></div>
+                                </div>
+                            </div>
+                    
+                            <!-- 02 Market Research -->
+                            <div class="cs-section cs-dark">
+                                <div class="cs-label">02 — Market Research</div>
+                                <div class="cs-market-grid">
+                                    <div class="cs-market-card">
+                                        <div class="cs-market-icon">📈</div>
+                                        <div class="cs-market-stat">$30.7B</div>
+                                        <div class="cs-market-desc">Global gamification market projected by 2025, with a 42% surge in demand for gamified learning & productivity tools</div>
+                                    </div>
+                                    <div class="cs-market-card">
+                                        <div class="cs-market-icon">📱</div>
+                                        <div class="cs-market-stat">84%</div>
+                                        <div class="cs-market-desc">Smartphone penetration in Vietnam by early 2025 — averaging 7.3 hours of daily screen time per person</div>
+                                    </div>
+                                    <div class="cs-market-card">
+                                        <div class="cs-market-icon">🎓</div>
+                                        <div class="cs-market-stat">44–55%</div>
+                                        <div class="cs-market-desc">Vietnamese university students showing signs of smartphone dependency, directly impacting academic performance</div>
+                                    </div>
+                                    <div class="cs-market-card">
+                                        <div class="cs-market-icon">🌱</div>
+                                        <div class="cs-market-stat">14.2%</div>
+                                        <div class="cs-market-desc">Annual CAGR for personal productivity apps, driven by "Edutainment" solutions blending task management with wellbeing</div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- 03 Competitor Analysis -->
+                            <div class="cs-section">
+                                <div class="cs-label">03 — Competitor Analysis</div>
+                                <div class="cs-competitor-table">
+                                    <div class="cs-comp-header">
+                                        <div></div>
+                                        <div>Forest</div>
+                                        <div>Focus Friend</div>
+                                        <div>Focus To-Do</div>
+                                        <div>Pomocat</div>
+                                        <div class="cs-comp-us">Focus Pal ✦</div>
+                                    </div>
+                                    <div class="cs-comp-row">
+                                        <div class="cs-comp-feature">Design Style</div>
+                                        <div>Minimalist, nature-inspired</div>
+                                        <div>Fun, mascot-based</div>
+                                        <div>Clean, professional</div>
+                                        <div>Minimal, doodle aesthetic</div>
+                                        <div class="cs-comp-us">Cute, healing, customizable</div>
+                                    </div>
+                                    <div class="cs-comp-row">
+                                        <div class="cs-comp-feature">Gamification</div>
+                                        <div>Grow trees</div>
+                                        <div>Virtual pet + interaction</div>
+                                        <div>Basic level system</div>
+                                        <div>Collect cat stamps</div>
+                                        <div class="cs-comp-us">Pet evolution + accessories</div>
+                                    </div>
+                                    <div class="cs-comp-row">
+                                        <div class="cs-comp-feature">Personalization</div>
+                                        <div>Name sessions</div>
+                                        <div>Limited</div>
+                                        <div>GTD integration</div>
+                                        <div>Timer only</div>
+                                        <div class="cs-comp-us">Themes, pets, accessories</div>
+                                    </div>
+                                    <div class="cs-comp-row">
+                                        <div class="cs-comp-feature">Ease of use</div>
+                                        <div>⭐⭐⭐⭐⭐</div>
+                                        <div>⭐⭐⭐⭐</div>
+                                        <div>⭐⭐⭐½</div>
+                                        <div>⭐⭐⭐⭐⭐</div>
+                                        <div class="cs-comp-us">⭐⭐⭐⭐⭐</div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- 04 User Persona -->
+                            <div class="cs-section cs-dark">
+                                <div class="cs-label">04 — User Persona</div>
+                                <div class="cs-persona">
+                                    <div class="cs-persona-left">
+                                        <div class="cs-persona-avatar">🐱</div>
+                                        <div class="cs-persona-name">Bảo Châu</div>
+                                        <div class="cs-persona-role">Student · 20 · Ho Chi Minh City</div>
+                                        <blockquote class="cs-persona-quote">"Mình cảm thấy quá áp lực, chỉ muốn có một góc nhỏ thật yên tĩnh để học tập"</blockquote>
+                                    </div>
+                                    <div class="cs-persona-right">
+                                        <div class="cs-persona-grid">
+                                            <div class="cs-persona-block">
+                                                <h5>🎯 Goals</h5>
+                                                <ul>
+                                                    <li>Focus for 45 min without checking social media</li>
+                                                    <li>Make studying feel rewarding, not stressful</li>
+                                                    <li>Find a structured method to avoid distractions</li>
+                                                </ul>
+                                            </div>
+                                            <div class="cs-persona-block">
+                                                <h5>😤 Pain Points</h5>
+                                                <ul>
+                                                    <li>"Just 5 minutes" turns into 2 hours of scrolling</li>
+                                                    <li>Feels lonely and unmotivated studying late at night</li>
+                                                    <li>Current apps are too rigid and impersonal</li>
+                                                </ul>
+                                            </div>
+                                            <div class="cs-persona-block">
+                                                <h5>💡 Behaviours</h5>
+                                                <ul>
+                                                    <li>Loves customizing her phone aesthetic</li>
+                                                    <li>Needs instant rewards to stay motivated</li>
+                                                    <li>Influenced by K-pop, anime, cute aesthetics</li>
+                                                </ul>
+                                            </div>
+                                            <div class="cs-persona-block">
+                                                <h5>✨ Influences</h5>
+                                                <ul>
+                                                    <li>"Study with me" content on YouTube & TikTok</li>
+                                                    <li>Peer pressure seeing friends being productive</li>
+                                                    <li>Virtual companion culture in Gen Z</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- 05 User Journey -->
+                            <div class="cs-section">
+                                <div class="cs-label">05 — User Journey</div>
+                                <div class="cs-journey">
+                                    <div class="cs-journey-step">
+                                        <div class="cs-journey-emoji">😶</div>
+                                        <div class="cs-journey-stage">Trigger</div>
+                                        <div class="cs-journey-desc">Sits down to study at 10pm, immediately reaches for phone to check notifications</div>
+                                        <div class="cs-journey-pain">Pain: Distracted before even starting</div>
+                                    </div>
+                                    <div class="cs-journey-arrow">→</div>
+                                    <div class="cs-journey-step">
+                                        <div class="cs-journey-emoji">😮</div>
+                                        <div class="cs-journey-stage">Onboarding</div>
+                                        <div class="cs-journey-desc">Opens app, greeted by cute cat mascot. Customizes theme and picks her Pal companion</div>
+                                        <div class="cs-journey-pain">Opportunity: Personalization hook</div>
+                                    </div>
+                                    <div class="cs-journey-arrow">→</div>
+                                    <div class="cs-journey-step">
+                                        <div class="cs-journey-emoji">😌</div>
+                                        <div class="cs-journey-stage">Focus Session</div>
+                                        <div class="cs-journey-desc">Sets 45-min timer. Her Pal studies alongside her on screen, creating emotional stakes</div>
+                                        <div class="cs-journey-pain">Pain: Temptation to quit early</div>
+                                    </div>
+                                    <div class="cs-journey-arrow">→</div>
+                                    <div class="cs-journey-step">
+                                        <div class="cs-journey-emoji">✨</div>
+                                        <div class="cs-journey-stage">Reward</div>
+                                        <div class="cs-journey-desc">Session complete! Earns Star Points, unlocks a cute hat accessory for her Pal</div>
+                                        <div class="cs-journey-pain">Win: Immediate visual reward</div>
+                                    </div>
+                                    <div class="cs-journey-arrow">→</div>
+                                    <div class="cs-journey-step">
+                                        <div class="cs-journey-emoji">🥰</div>
+                                        <div class="cs-journey-stage">Reflection</div>
+                                        <div class="cs-journey-desc">Reviews daily stats and Pal diary. Shares progress card to story. Wants to come back tomorrow</div>
+                                        <div class="cs-journey-pain">Win: Habit loop formed</div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- 06 Color & Typography -->
+                            <div class="cs-section cs-dark">
+                                <div class="cs-label">06 — Visual Identity</div>
+                                <div class="cs-visual-identity">
+                                    <div class="cs-color-group">
+                                        <div class="cs-color-title">Color Palette</div>
+                                        <div class="cs-colors">
+                                            <div class="cs-color-chip">
+                                                <div class="cs-chip" style="background:#646697;"></div>
+                                                <span>#646697</span><small>Dark Blue-Gray</small>
+                                            </div>
+                                            <div class="cs-color-chip">
+                                                <div class="cs-chip" style="background:#7489AD;"></div>
+                                                <span>#7489AD</span><small>Zen Blue</small>
+                                            </div>
+                                            <div class="cs-color-chip">
+                                                <div class="cs-chip" style="background:#E6D2FF;"></div>
+                                                <span>#E6D2FF</span><small>Light Lavender</small>
+                                            </div>
+                                            <div class="cs-color-chip">
+                                                <div class="cs-chip" style="background:#020F50;"></div>
+                                                <span>#020F50</span><small>Blue Ribbon</small>
+                                            </div>
+                                            <div class="cs-color-chip">
+                                                <div class="cs-chip" style="background:#B594DE;"></div>
+                                                <span>#B594DE</span><small>Baby Violet</small>
+                                            </div>
+                                            <div class="cs-color-chip">
+                                                <div class="cs-chip" style="background:#FFD1D1;"></div>
+                                                <span>#FFD1D1</span><small>Soft Eva Pink</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="cs-type-group">
+                                        <div class="cs-color-title">Typography</div>
+                                        <div class="cs-fonts">
+                                            <div class="cs-font-item cs-font-display">Mochiy Pop One — Display</div>
+                                            <div class="cs-font-item cs-font-body">Inter — Body & UI</div>
+                                            <div class="cs-font-item cs-font-mono">IBM Plex Mono — Code & Stats</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- 07 Key Screens -->
+                            <div class="cs-section">
+                                <div class="cs-label">07 — Key Screens</div>
+                                <div class="cs-screens-grid">
+                                    <div class="cs-screen-item">
+                                        <div class="cs-screen-label">Splash Screen</div>
+                                        <div class="cs-screen-desc">Mascot-led welcome reduces anxiety before entering a productivity app</div>
+                                    </div>
+                                    <div class="cs-screen-item">
+                                        <div class="cs-screen-label">Home · Focus Session</div>
+                                        <div class="cs-screen-desc">One tap to start. Choose category, duration, and which Pal accompanies the session</div>
+                                    </div>
+                                    <div class="cs-screen-item">
+                                        <div class="cs-screen-label">Dressing Room</div>
+                                        <div class="cs-screen-desc">Focus points unlock accessories — turns productivity into tangible, collectable rewards</div>
+                                    </div>
+                                    <div class="cs-screen-item">
+                                        <div class="cs-screen-label">Task Manager</div>
+                                        <div class="cs-screen-desc">Weekly calendar + priority tags (Low / Medium / High) to plan sessions intentionally</div>
+                                    </div>
+                                    <div class="cs-screen-item">
+                                        <div class="cs-screen-label">Stats & Diary</div>
+                                        <div class="cs-screen-desc">Daily focus hours, session history, and weekly trend chart for self-reflection</div>
+                                    </div>
+                                    <div class="cs-screen-item">
+                                        <div class="cs-screen-label">21-Day Challenge</div>
+                                        <div class="cs-screen-desc">Journey map with milestone rewards at day 3, 7, 14, 21 — building long-term habit loops</div>
+                                    </div>
+                                </div>
+                                <div class="cs-figma-cta">
+                                    <a href="https://www.figma.com/design/6l4tEdlmPAcbuNZLKzTfHW/Focus-App?node-id=0-1" target="_blank" rel="noopener" class="cs-figma-btn">
+                                        View full prototype on Figma ↗
+                                    </a>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </article>
                 </div>
-                <div class="project-card">
-                    <img src="assets/images/img_rectangle_22_1.png" alt="Ngày Giỗ Tổ" class="project-image" />
-                    <div class="project-tech">Figma HTML CSS CreateJS Python</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Ngày Giỗ Tổ</h3>
-                        <p class="project-description">Web Development - Webdev Adventure : Web Software Development Competition</p>
-                        <div class="project-buttons">
-                            <button class="btn-project btn-project-primary" onclick="window.location.href='Untitled-4.html'">
-                                Overview <~>
-                            </button>
-                            <button class="btn-project btn-project-secondary" onclick="window.location.href='https://www.figma.com/design/XpG29Qk2bjWnKQF9PQqoTT/D%E1%BB%B1-%C3%A1n-%22Ng%C3%A0y-Gi%E1%BB%97-T%E1%BB%95%22?node-id=85-771&p=f&t=Sg0qgs8AakP3OyTo-0';">
-                                Short cut >=
-                            </button>
+
+                <!-- Coding -->
+                <div class="feed-group" data-category="coding">
+                    <article class="project-story">
+                        <span class="story-index">01</span>
+                        <div class="story-hero">
+                            <div class="story-media">
+                                <img src="assets/images/img_rectangle_22_276x562.png" alt="NOCTOPUS" class="story-image" />
+                            </div>
+                            <div class="story-content">
+                                <div class="story-tags"><span>HTML</span><span>CSS</span><span>Javascript</span></div>
+                                <h3 class="story-title">NOCTOPUS<br />Time to go to bed</h3>
+                                <p class="story-desc">A bedtime companion website for kids, built for the Programming Course at university — blending front-end dev with a gentle, family-friendly UX.</p>
+                                <div class="story-links">
+                                    <a class="story-link" href="https://minhthu06012006-a11y.github.io/timetogotobed/" target="_blank" rel="noopener">View Live Demo ↗</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                        <div class="story-details">
+                            <div class="detail-row">
+                                <div class="detail-block">
+                                    <h4>Overview</h4>
+                                    <p>A family-oriented site built with HTML, CSS and JavaScript to help kids build healthy sleep routines through lullabies, interactive stories and a friendly octopus mascot.</p>
+                                </div>
+                                <div class="detail-block">
+                                    <h4>Problem & Research</h4>
+                                    <p>Surveys with 20 parents and kids found 80% struggle with sleep schedules — so the design leans on soft visuals, gentle animation and a mascot to make bedtime something to look forward to.</p>
+                                </div>
+                            </div>
+                            <div class="detail-gallery">
+                                <img src="assets/images/img_rectangle_39.png" alt="Homepage">
+                                <img src="assets/images/img_rectangle_38.png" alt="Sign in page">
+                            </div>
+                            <div class="detail-stats">
+                                <div class="stat-badge"><span class="stat-num">90%</span><span class="stat-label">Parent satisfaction</span></div>
+                                <div class="stat-badge"><span class="stat-num">+25%</span><span class="stat-label">Engagement after 3 test rounds</span></div>
+                                <div class="stat-badge"><span class="stat-num">+20%</span><span class="stat-label">Simulated routine improvement</span></div>
+                            </div>
+                            <div class="detail-block">
+                                <h4>Learnings</h4>
+                                <p>User testing was the biggest lever for improvement. Next step: deeper personalization — customizable reminders for returning families.</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-story">
+                        <span class="story-index">02</span>
+                        <div class="story-hero">
+                            <div class="story-media">
+                                <img src="assets/images/airwatch.jpg" alt="AirWatch Vietnam" class="story-image" />
+                            </div>
+                            <div class="story-content">
+                                <div class="story-tags"><span>Next.js</span><span>Tailwind CSS</span><span>Supabase</span></div>
+                                <h3 class="story-title">AirWatch Vietnam</h3>
+                                <p class="story-desc">UX/UI & Web Development - Real-time Air Quality Monitoring Platform</p>
+                                <div class="story-links">
+                                    <a class="story-link" href="https://airwatchvietnam.vercel.app/" target="_blank" rel="noopener">View Live Demo ↗</a>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
                 </div>
-                <div class="project-card">
-                    <img src="assets/images/image1.png" alt="Ngày Giỗ Tổ" class="project-image" />
-                    <div class="project-tech">UX/UI Design</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Tết ở trong ta</h3>
-                        <p class="project-description">UX/UI Design - Final Project for the Arttech Theory Course</p>
-                        <div class="project-buttons">
-                            <button class="btn-project btn-project-primary" onclick="window.location.href='Untitled-3.html'">
-                                Overview <~>
-                            </button>
-                            <button class="btn-project btn-project-secondary" onclick="window.location.href='https://www.figma.com/design/f6V7bf57vcoOZPHvrr0bEr/D%E1%BB%B1-%C3%A1n-%22T%E1%BA%BFt-%E1%BB%9F-trong-ta%22?node-id=105-389&p=f&t=8RCzT25kpPTxHalu-0';">
-                                Short cut >=
-                            </button>
+
+                <!-- Art -->
+                <div class="feed-group" data-category="art">
+                    <article class="project-story">
+                        <span class="story-index">01</span>
+                        <div class="story-hero">
+                            <div class="story-media">
+                                <img src="assets/images/image.png" alt="Artworks" class="story-image" />
+                            </div>
+                            <div class="story-content">
+                                <div class="story-tags"><span>Photoshop</span><span>Illustrator</span></div>
+                                <h3 class="story-title">Artworks</h3>
+                                <p class="story-desc">2D Art Showcase - just a place to enjoy my love for art.</p>
+                                <div class="story-links">
+                                    <a class="story-link" href="https://drive.google.com/drive/folders/1rny_qiwWULHWx616uR6V_y1R6VkHsacx" target="_blank" rel="noopener">View Full Folder ↗</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/image.png" alt="Ngày Giỗ Tổ" class="project-image" />
-                    <div class="project-tech">Photoshop Illustrator</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Artworks</h3>
-                        <p class="project-description">2D Art Showcase</p>
-                        <div class="project-buttons">
-                            <button class="btn-project btn-project-primary" onclick="window.location.href='Untitled-5.html'">
-                                Overview <~>
-                            </button>
-                            <button class="btn-project btn-project-secondary" onclick="window.location.href='https://drive.google.com/drive/folders/1rny_qiwWULHWx616uR6V_y1R6VkHsacx';">
-                                Short cut >=
-                            </button>
+                        <div class="story-details">
+                            <div class="detail-block">
+                                <h4>Gallery</h4>
+                            </div>
+                            <div class="detail-gallery gallery-3col">
+                                <img src="assets/images/img_frame_39963.png" alt="Artwork">
+                                <img src="assets/images/img_nh_9.png" alt="Artwork">
+                                <img src="assets/images/img_frame_39964.png" alt="Artwork">
+                                <img src="assets/images/img_nh_10.png" alt="Artwork">
+                                <img src="assets/images/img_nh_1.png" alt="Artwork">
+                                <img src="assets/images/img_nh_2.png" alt="Artwork">
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/angle.png" alt="Ngày Giỗ Tổ" class="project-image" />
-                    <div class="project-tech">Python Blender Processing</div>
-                    <div class="project-info">
-                        <h3 class="project-title">Letters of Peace</h3>
-                        <p class="project-description">Interactive Design Project</p>
-                        <div class="project-buttons">
-                            <button class="btn-project btn-project-primary" onclick="window.location.href='https://drive.google.com/file/d/14L2VxsYfXd_elfaYvmVoHgllH9sFd9tF/view?usp=sharing'">
-                                Overview <~>
-                            </button>
+                    </article>
+                    <article class="project-story">
+                        <span class="story-index">02</span>
+                        <div class="story-hero">
+                            <div class="story-media">
+                                <img src="assets/images/angle.png" alt="Letters of Peace" class="story-image" />
+                            </div>
+                            <div class="story-content">
+                                <div class="story-tags"><span>Python</span><span>Blender</span><span>Processing</span></div>
+                                <h3 class="story-title">Letters of Peace</h3>
+                                <p class="story-desc">Interactive Design Project</p>
+                                <div class="story-links">
+                                    <a class="story-link" href="https://drive.google.com/file/d/14L2VxsYfXd_elfaYvmVoHgllH9sFd9tF/view?usp=sharing" target="_blank" rel="noopener">View File ↗</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <img src="assets/images/airwatch.jpg" alt="AirWatch Vietnam" class="project-image" />
-                    <div class="project-tech">Next.js Tailwind CSS Supabase</div>
-                    <div class="project-info">
-                        <h3 class="project-title">AirWatch Vietnam</h3>
-                        <p class="project-description">UX/UI & Web Development - Real-time Air Quality Monitoring Platform</p>
-                        <div class="project-buttons">
-                            <button class="btn-project btn-project-primary" onclick="window.location.href='Untitled-6.html'">
-                                Overview <~>
-                            </button>
-                            <button class="btn-project btn-project-secondary" onclick="window.location.href='https://airwatchvietnam.vercel.app/';">
-                                Short cut >=
-                            </button>
+                    </article>
+                    <article class="project-story">
+                        <span class="story-index">03</span>
+                        <div class="story-hero">
+                            <div class="story-media">
+                                <!-- Dùng video trực tiếp làm hero — đây chính là showcase mạnh nhất -->
+                                <video
+                                    class="story-video-hero"
+                                    src="assets/videos/ly-keo-chai.mp4"
+                                    autoplay muted loop playsinline
+                                    poster="assets/images/ly-keo-chai-cover.jpg"
+                                ></video>
+                            </div>
+                            <div class="story-content">
+                                <div class="story-tags">
+                                    <span>Visual Art</span><span>Digital Illustration</span><span>Vietnamese Culture</span><span>Procreate</span>
+                                </div>
+                                <h3 class="story-title">Lý Kéo Chài</h3>
+                                <p class="story-desc">A digital illustration inspired by Lễ Cá Ông — the sacred Whale Worship Festival of Vietnamese coastal communities. A tribute to the fishermen who brave the sea and the spiritual bond between humans and the ocean.</p>
+                                <div class="story-links">
+                                    <a class="story-link" href="assets/videos/ly-keo-chai.mp4" target="_blank" rel="noopener">Watch full process ↗</a>
+                                </div>
+                            </div>
                         </div>
-                    </div>
+                    
+                        <div class="story-details">
+                    
+                            <!-- 01 Context -->
+                            <div class="cs-section">
+                                <div class="cs-label">01 — Cultural Context</div>
+                                <div class="art-context-grid">
+                                    <div class="art-context-main">
+                                        <h4 class="art-context-title">Lễ Cá Ông — Nghinh Ông</h4>
+                                        <p class="art-context-text">Lễ Cá Ông (Whale Worship Festival), also known as Lễ Nghinh Ông, is one of the most sacred festivals of Vietnamese coastal communities — particularly in the South. Rooted in over 200 years of tradition, it is held annually between the 14th and 17th of the 8th lunar month in provinces like Bình Thuận, Bà Rịa–Vũng Tàu, and Cà Mau.</p>
+                                        <p class="art-context-text">Fishermen believe the whale (Cá Ông — "Lord Fish") is a divine protector sent by the Goddess of the Sea to guide lost sailors home. When a whale washes ashore, it is given a full funeral and buried with deep respect. After three years, its bones are ceremonially enshrined in a local đình (communal house).</p>
+                                        <p class="art-context-text">The festival features grand processions of decorated fishing boats, ritual offerings, traditional music (Hát Bội), and the haunting folk song <em>Lý Kéo Chài</em> — a rowing chant that fishermen sing in rhythm with pulling their nets, that became the soul of this artwork.</p>
+                                    </div>
+                                    <div class="art-context-sidebar">
+                                        <div class="art-fact-card">
+                                            <div class="art-fact-icon">🐳</div>
+                                            <div class="art-fact-label">Divine Guardian</div>
+                                            <div class="art-fact-text">Whales are called "Cá Ông" — Lord Fish — believed to be sacred protectors of fishermen at sea</div>
+                                        </div>
+                                        <div class="art-fact-card">
+                                            <div class="art-fact-icon">🎵</div>
+                                            <div class="art-fact-label">Lý Kéo Chài</div>
+                                            <div class="art-fact-text">A traditional folk chant sung by fishermen while pulling nets — its rhythm carries the labor and soul of the sea</div>
+                                        </div>
+                                        <div class="art-fact-card">
+                                            <div class="art-fact-icon">🛶</div>
+                                            <div class="art-fact-label">200+ Years</div>
+                                            <div class="art-fact-text">One of the oldest continuously practiced maritime festivals in Southern Vietnam, listed as national intangible cultural heritage</div>
+                                        </div>
+                                        <div class="art-fact-card">
+                                            <div class="art-fact-icon">🌊</div>
+                                            <div class="art-fact-label">Community Bond</div>
+                                            <div class="art-fact-text">The festival unites entire coastal villages — a rare moment when the sea is not a source of danger but of celebration</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- 02 Moodboard -->
+                            <div class="cs-section cs-dark">
+                                <div class="cs-label">02 — Visual Direction & Moodboard</div>
+                                <div class="art-moodboard">
+                                    <div class="art-mood-intro">
+                                        <p>The visual language draws from three sources: the vivid palette of Vietnamese lacquer painting (<em>sơn mài</em>), the dramatic compositions of traditional woodblock prints (<em>tranh Đông Hồ</em>), and the raw energy of contemporary digital illustration. The goal was to feel ancient but alive.</p>
+                                    </div>
+                                    <div class="art-mood-pillars">
+                                        <div class="art-mood-pillar">
+                                            <div class="art-mood-swatch" style="background: linear-gradient(135deg, #8B1A1A, #C0392B, #E74C3C);"></div>
+                                            <div class="art-mood-pill-label">Lacquer Red</div>
+                                            <div class="art-mood-pill-desc">The ceremonial red of festival lanterns, the fire of ritual incense, the pulse of a living tradition</div>
+                                        </div>
+                                        <div class="art-mood-pillar">
+                                            <div class="art-mood-swatch" style="background: linear-gradient(135deg, #0A1628, #1A2E4A, #2E5496);"></div>
+                                            <div class="art-mood-pill-label">Deep Sea Navy</div>
+                                            <div class="art-mood-pill-desc">The unfathomable depth of the South China Sea at dusk — vast, mysterious, both threat and home</div>
+                                        </div>
+                                        <div class="art-mood-pillar">
+                                            <div class="art-mood-swatch" style="background: linear-gradient(135deg, #8B6914, #C4960A, #F0C420);"></div>
+                                            <div class="art-mood-pill-label">Festival Gold</div>
+                                            <div class="art-mood-pill-desc">The glow of offerings, the shimmer of fish scales, the warmth of torchlight on weathered skin</div>
+                                        </div>
+                                        <div class="art-mood-pillar">
+                                            <div class="art-mood-swatch" style="background: linear-gradient(135deg, #2C5F2E, #4A7C59, #6B9E6B);"></div>
+                                            <div class="art-mood-pill-label">Coastal Sage</div>
+                                            <div class="art-mood-pill-desc">Mossy fishing nets, weathered bamboo poles, the patient green of mangroves at the water's edge</div>
+                                        </div>
+                                    </div>
+                                    <div class="art-mood-keywords">
+                                        <span>Reverence</span>
+                                        <span>Labor & Ritual</span>
+                                        <span>Sea & Spirit</span>
+                                        <span>Folk Memory</span>
+                                        <span>Intangible Heritage</span>
+                                        <span>Collective Identity</span>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <!-- 03 Process -->
+                            <div class="cs-section">
+                                <div class="cs-label">03 — Creation Process</div>
+                                <div class="art-process-intro">
+                                    <p>The video above captures the full creation journey — from the first rough sketch to the final piece. Below is a breakdown of each stage and the decisions made along the way.</p>
+                                </div>
+                                <div class="art-process-steps">
+                                    <div class="art-process-step">
+                                        <div class="art-process-num">01</div>
+                                        <div class="art-process-content">
+                                            <div class="art-process-name">Concept Sketch</div>
+                                            <div class="art-process-img-placeholder">
+                                                <span>📷 Add your sketch photo here</span>
+                                                <small>assets/images/lykeochai-01-sketch.jpg</small>
+                                            </div>
+                                            <div class="art-process-note">Loose gesture drawing to establish composition — the diagonal of the fishing net became the central axis, pulling the viewer's eye from the fishermen down to the sea.</div>
+                                        </div>
+                                    </div>
+                                    <div class="art-process-step">
+                                        <div class="art-process-num">02</div>
+                                        <div class="art-process-content">
+                                            <div class="art-process-name">Line Art</div>
+                                            <div class="art-process-img-placeholder">
+                                                <span>📷 Add your line art photo here</span>
+                                                <small>assets/images/lykeochai-02-line.jpg</small>
+                                            </div>
+                                            <div class="art-process-note">Clean ink lines with varied weight — thicker strokes for the figures in the foreground, finer lines for the distant boats and waves, creating natural depth.</div>
+                                        </div>
+                                    </div>
+                                    <div class="art-process-step">
+                                        <div class="art-process-num">03</div>
+                                        <div class="art-process-content">
+                                            <div class="art-process-name">Base Colors</div>
+                                            <div class="art-process-img-placeholder">
+                                                <span>📷 Add your flat color photo here</span>
+                                                <small>assets/images/lykeochai-03-color.jpg</small>
+                                            </div>
+                                            <div class="art-process-note">Flat color blocking in the lacquer palette — deep navy for the sea and sky, ceremonial red for clothing and details, warm gold for the boat and fish.</div>
+                                        </div>
+                                    </div>
+                                    <div class="art-process-step">
+                                        <div class="art-process-num">04</div>
+                                        <div class="art-process-content">
+                                            <div class="art-process-name">Shading & Light</div>
+                                            <div class="art-process-img-placeholder">
+                                                <span>📷 Add your shading photo here</span>
+                                                <small>assets/images/lykeochai-04-shade.jpg</small>
+                                            </div>
+                                            <div class="art-process-note">Building volume with multiply layers — the light source is a warm festival torch from the right, casting cool shadows into the nets and water.</div>
+                                        </div>
+                                    </div>
+                                    <div class="art-process-step">
+                                        <div class="art-process-num">05</div>
+                                        <div class="art-process-content">
+                                            <div class="art-process-name">Final Details & Texture</div>
+                                            <div class="art-process-img-placeholder">
+                                                <span>📷 Add your final photo here</span>
+                                                <small>assets/images/lykeochai-05-final.jpg</small>
+                                            </div>
+                                            <div class="art-process-note">Adding grain texture, adjusting overall color temperature, and painting the final light effects — the glowing sea surface and the luminous fish scales that tie the composition together.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="art-process-note-global">
+                                    <span>💡</span>
+                                    <p>To add your process photos: capture screenshots from the video above at each stage and save them as the filenames shown. The placeholders will automatically display your images once added.</p>
+                                </div>
+                            </div>
+                    
+                            <!-- 04 Final Work -->
+                            <div class="cs-section cs-dark">
+                                <div class="cs-label">04 — Final Artwork</div>
+                                <div class="art-final">
+                                    <video
+                                        class="art-final-video"
+                                        src="assets/videos/ly-keo-chai.mp4"
+                                        controls
+                                        poster="assets/images/ly-keo-chai-cover.jpg"
+                                    ></video>
+                                    <div class="art-final-caption">
+                                        <h4>Lý Kéo Chài — Full Timelapse</h4>
+                                        <p>Watch the complete creation process from blank canvas to finished illustration. The ~3 minute timelapse compresses hours of work — each brushstroke a small act of cultural remembrance.</p>
+                                        <div class="art-final-tags">
+                                            <span>Digital Illustration</span>
+                                            <span>Cultural Heritage</span>
+                                            <span>Vietnamese Folk Art</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </article>
+                    <article class="project-story">
+                        <span class="story-index">04</span>
+                        <div class="story-hero">
+                            <div class="story-media">
+                                <video
+                                    class="story-video-hero"
+                                    src="assets/videos/love-story.mp4"
+                                    autoplay muted loop playsinline
+                                    poster="assets/images/love-story-cover.jpg"
+                                ></video>
+                            </div>
+                            <div class="story-content">
+                                <div class="story-tags">
+                                    <span>Digital Illustration</span><span>Storytelling</span><span>Character Design</span><span>Romance</span>
+                                </div>
+                                <h3 class="story-title">Câu Chuyện Tình Yêu</h3>
+                                <p class="story-desc">A wordless love story told through sequential illustration — two figures, a shared world, and the quiet moments that make up the space between falling and staying in love.</p>
+                                <div class="story-links">
+                                    <a class="story-link" href="assets/videos/love-story.mp4" target="_blank" rel="noopener">Watch full timelapse ↗</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="story-details">
+
+                            <!-- 01 Concept -->
+                            <div class="cs-section">
+                                <div class="cs-label">01 — Concept & Inspiration</div>
+                                <div class="art-context-grid">
+                                    <div class="art-context-main">
+                                        <h4 class="art-context-title">Love as a Visual Language</h4>
+                                        <p class="art-context-text">This project explores the idea that love doesn't need words — it lives in glances, in hands reaching for each other, in the way two people share the same light. The illustrations tell a story without dialogue, relying entirely on composition, color, and body language to carry emotion.</p>
+                                        <p class="art-context-text">Inspired by the visual poetry of East Asian romance manhwa and the quiet intimacy of Studio Ghibli's background art, the style blends soft pastel washes with precise line work — warm and dreamlike, but grounded in genuine human feeling.</p>
+                                        <p class="art-context-text">Each scene in the sequence is designed to stand alone as a complete moment, while contributing to a larger emotional arc — from the nervous first glance, through shared adventures, to the comfortable silence of a love that has settled in.</p>
+                                    </div>
+                                    <div class="art-context-sidebar">
+                                        <div class="art-fact-card">
+                                            <div class="art-fact-icon">💭</div>
+                                            <div class="art-fact-label">Wordless Story</div>
+                                            <div class="art-fact-text">Every emotion is carried by pose, color, and composition — no text, no captions, just visual rhythm</div>
+                                        </div>
+                                        <div class="art-fact-card">
+                                            <div class="art-fact-icon">🎨</div>
+                                            <div class="art-fact-label">Soft Anime Style</div>
+                                            <div class="art-fact-text">Pastel-forward palette with precise ink lines — influenced by shoujo manga and healing illustration aesthetics</div>
+                                        </div>
+                                        <div class="art-fact-card">
+                                            <div class="art-fact-icon">✨</div>
+                                            <div class="art-fact-label">Sequential Art</div>
+                                            <div class="art-fact-text">Each frame is both a standalone piece and part of a larger emotional journey — like pages in a visual novel</div>
+                                        </div>
+                                        <div class="art-fact-card">
+                                            <div class="art-fact-icon">🌸</div>
+                                            <div class="art-fact-label">Character Design</div>
+                                            <div class="art-fact-text">The two characters were designed to visually complement each other — contrasting silhouettes that feel incomplete apart</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 02 Moodboard -->
+                            <div class="cs-section cs-dark">
+                                <div class="cs-label">02 — Visual Direction & Moodboard</div>
+                                <div class="art-moodboard">
+                                    <div class="art-mood-intro">
+                                        <p>The palette was built around warmth and softness — colors that feel like late afternoon light, like the flutter before a confession, like the exhale of a long-held feeling finally released.</p>
+                                    </div>
+                                    <div class="art-mood-pillars">
+                                        <div class="art-mood-pillar">
+                                            <div class="art-mood-swatch" style="background: linear-gradient(135deg, #FFB7C5, #FF8FAB, #FF6B9D);"></div>
+                                            <div class="art-mood-pill-label">Petal Pink</div>
+                                            <div class="art-mood-pill-desc">The blush of a cheek, the color of first feelings — tender and vulnerable</div>
+                                        </div>
+                                        <div class="art-mood-pillar">
+                                            <div class="art-mood-swatch" style="background: linear-gradient(135deg, #FFF0C8, #FFD97D, #FFBC42);"></div>
+                                            <div class="art-mood-pill-label">Golden Hour</div>
+                                            <div class="art-mood-pill-desc">Late afternoon warmth — the light that makes everything feel like it matters</div>
+                                        </div>
+                                        <div class="art-mood-pillar">
+                                            <div class="art-mood-swatch" style="background: linear-gradient(135deg, #C8D8FF, #A0B4FF, #7B96F5);"></div>
+                                            <div class="art-mood-pill-label">Dreamy Blue</div>
+                                            <div class="art-mood-pill-desc">The cool quiet of evening, of almost-sleep thoughts, of longing across distance</div>
+                                        </div>
+                                        <div class="art-mood-pillar">
+                                            <div class="art-mood-swatch" style="background: linear-gradient(135deg, #E8D5F5, #C9A8E0, #A97CC5);"></div>
+                                            <div class="art-mood-pill-label">Soft Lavender</div>
+                                            <div class="art-mood-pill-desc">The gentle weight of something precious — romantic without being overwhelming</div>
+                                        </div>
+                                    </div>
+                                    <div class="art-mood-keywords">
+                                        <span>Tenderness</span>
+                                        <span>Quiet Intimacy</span>
+                                        <span>First Feelings</span>
+                                        <span>Warmth</span>
+                                        <span>Visual Poetry</span>
+                                        <span>Character Chemistry</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 03 Process -->
+                            <div class="cs-section">
+                                <div class="cs-label">03 — Creation Process</div>
+                                <div class="art-process-intro">
+                                    <p>The timelapse above shows the complete journey. Each scene was approached the same way — emotion first, composition second, color last. Below is the breakdown of each stage.</p>
+                                </div>
+                                <div class="art-process-steps">
+                                    <div class="art-process-step">
+                                        <div class="art-process-num">01</div>
+                                        <div class="art-process-content">
+                                            <div class="art-process-name">Story Thumbnails</div>
+                                            <div class="art-process-img-placeholder">
+                                                <span>📷 Add your thumbnail sketches here</span>
+                                                <small>assets/images/lovestory-01-thumb.jpg</small>
+                                            </div>
+                                            <div class="art-process-note">Tiny rough sketches — just enough to plan the emotional beat of each scene. At this stage the goal is to find the pose and framing that makes the feeling legible before committing to detail.</div>
+                                        </div>
+                                    </div>
+                                    <div class="art-process-step">
+                                        <div class="art-process-num">02</div>
+                                        <div class="art-process-content">
+                                            <div class="art-process-name">Character Sketch</div>
+                                            <div class="art-process-img-placeholder">
+                                                <span>📷 Add your character sketch here</span>
+                                                <small>assets/images/lovestory-02-sketch.jpg</small>
+                                            </div>
+                                            <div class="art-process-note">Refining the characters with consistent proportions and expressive faces. Body language is everything in a wordless story — the angle of a chin, the curl of fingers, the direction of a gaze.</div>
+                                        </div>
+                                    </div>
+                                    <div class="art-process-step">
+                                        <div class="art-process-num">03</div>
+                                        <div class="art-process-content">
+                                            <div class="art-process-name">Line Art</div>
+                                            <div class="art-process-img-placeholder">
+                                                <span>📷 Add your line art here</span>
+                                                <small>assets/images/lovestory-03-line.jpg</small>
+                                            </div>
+                                            <div class="art-process-note">Clean, confident ink lines with deliberate weight variation — heavier on character outlines to separate them from the soft backgrounds, finer strokes for hair and fabric details.</div>
+                                        </div>
+                                    </div>
+                                    <div class="art-process-step">
+                                        <div class="art-process-num">04</div>
+                                        <div class="art-process-content">
+                                            <div class="art-process-name">Color & Atmosphere</div>
+                                            <div class="art-process-img-placeholder">
+                                                <span>📷 Add your coloring stage here</span>
+                                                <small>assets/images/lovestory-04-color.jpg</small>
+                                            </div>
+                                            <div class="art-process-note">Laying color in large flat areas first, then building atmosphere with soft gradients. Each scene has a dominant hue tied to its emotional tone — pink for nervousness, gold for joy, blue for longing.</div>
+                                        </div>
+                                    </div>
+                                    <div class="art-process-step">
+                                        <div class="art-process-num">05</div>
+                                        <div class="art-process-content">
+                                            <div class="art-process-name">Light, Glow & Final Details</div>
+                                            <div class="art-process-img-placeholder">
+                                                <span>📷 Add your final details here</span>
+                                                <small>assets/images/lovestory-05-final.jpg</small>
+                                            </div>
+                                            <div class="art-process-note">Adding rim light, bloom effects, floating petals and light particles — the romantic visual language that elevates the illustration from a drawing into a feeling. The last 10% of the work that creates 90% of the magic.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="art-process-note-global">
+                                    <span>💡</span>
+                                    <p>To add process photos: capture screenshots from the timelapse at each stage and save them with the filenames shown above. Placeholders will automatically display your images once added.</p>
+                                </div>
+                            </div>
+
+                            <!-- 04 Final Work -->
+                            <div class="cs-section cs-dark">
+                                <div class="cs-label">04 — Final Artwork</div>
+                                <div class="art-final">
+                                    <video
+                                        class="art-final-video"
+                                        src="assets/videos/love-story.mp4"
+                                        controls
+                                        poster="assets/images/love-story-cover.jpg"
+                                    ></video>
+                                    <div class="art-final-caption">
+                                        <h4>Câu Chuyện Tình Yêu — Full Timelapse</h4>
+                                        <p>Watch the complete illustration process from blank canvas to finished artwork. Every brushstroke in this timelapse is a small choice in service of a feeling — the quiet, persistent warmth of love as it actually lives.</p>
+                                        <div class="art-final-tags">
+                                            <span>Digital Illustration</span>
+                                            <span>Sequential Art</span>
+                                            <span>Anime Style</span>
+                                            <span>Romance</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </article>
                 </div>
             </div>
+
             <img src="assets/images/groundele.png" alt="groundele" class="groundele">
         </div>
     </section>
+
     
     <!-- Certificates Section -->
     <section id="certificates" class="certificates-section">
@@ -552,7 +1336,7 @@
         animate();
 
         // Add hover effect for interactive elements
-        const interactiveElements = document.querySelectorAll('a, button, .nav-item, .btn-primary, .btn-secondary, .btn-project, .project-card, .certificate-item');
+        const interactiveElements = document.querySelectorAll('a, button, .nav-item, .btn-primary, .btn-secondary, .btn-project, .project-card, .certificate-item, .tab-btn, .story-link, .story-media');
         
         interactiveElements.forEach(el => {
           el.addEventListener('mouseenter', () => {
@@ -575,6 +1359,91 @@
           cursorGlow.style.opacity = '1';
           cursorGlowOuter.style.opacity = '1';
         });
+
+        // ---- Projects: tab switching + scroll-reveal story feed ----
+        (function () {
+          const tabButtons = document.querySelectorAll('.project-tabs .tab-btn');
+          const feedGroups = document.querySelectorAll('.project-feed .feed-group');
+          const counter = document.querySelector('.project-counter');
+          const counterCurrent = document.querySelector('.counter-current');
+          const counterTotal = document.querySelector('.counter-total');
+
+          if (!tabButtons.length || !feedGroups.length) return;
+
+          const accentByCategory = {
+            uxui: '#c778dd',
+            coding: '#08f7fe',
+            art: '#ff1493'
+          };
+
+          function updateCounterTotal(category) {
+            const group = document.querySelector(`.feed-group[data-category="${category}"]`);
+            if (!group) return;
+            const total = group.querySelectorAll('.project-story').length;
+            counterTotal.textContent = String(total).padStart(2, '0');
+            counterCurrent.textContent = '01';
+          }
+
+          function setActiveTab(category) {
+            tabButtons.forEach((btn) => {
+              const isActive = btn.dataset.category === category;
+              btn.classList.toggle('active', isActive);
+              btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+            });
+
+            feedGroups.forEach((group) => {
+              const isActive = group.dataset.category === category;
+              group.classList.toggle('active', isActive);
+              if (isActive) {
+                group.querySelectorAll('.project-story').forEach((story) => {
+                  story.classList.remove('in-view');
+                  void story.offsetWidth;
+                });
+              }
+            });
+
+            if (counter) counter.style.setProperty('--accent', accentByCategory[category] || '#c778dd');
+            updateCounterTotal(category);
+          }
+
+          tabButtons.forEach((btn) => {
+            btn.addEventListener('click', () => {
+              const category = btn.dataset.category;
+              if (btn.classList.contains('active')) return;
+              setActiveTab(category);
+              const tabsEl = document.querySelector('.project-tabs');
+              if (tabsEl) {
+                window.scrollTo({ top: tabsEl.offsetTop - 100, behavior: 'smooth' });
+              }
+            });
+          });
+
+          const revealObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add('in-view');
+              }
+            });
+          }, { threshold: 0, rootMargin: '0px 0px -10% 0px' });
+
+          document.querySelectorAll('.project-story').forEach((story) => revealObserver.observe(story));
+
+          const counterObserver = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                const group = entry.target.closest('.feed-group');
+                if (!group || !group.classList.contains('active')) return;
+                const stories = Array.from(group.querySelectorAll('.project-story'));
+                const idx = stories.indexOf(entry.target) + 1;
+                if (idx > 0) counterCurrent.textContent = String(idx).padStart(2, '0');
+              }
+            });
+          }, { threshold: 0, rootMargin: '-45% 0px -45% 0px' });
+
+          document.querySelectorAll('.project-story').forEach((story) => counterObserver.observe(story));
+
+          setActiveTab('uxui');
+        })();
     </script>
   
 </body>
